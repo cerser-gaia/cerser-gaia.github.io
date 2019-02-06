@@ -28,7 +28,7 @@ Version: 1.0
 -----------------------------*/
 
 .slide-bg-one {
-    background: rgba(0, 0, 0, 0) url("assest/img/slider/slide_1.jpg") no-repeat scroll center center / cover;
+    background: rgba(207, 207, 207, 0.514) url("assest/img/slider/slide_1.jpg") no-repeat scroll center center / cover;
 }
 
 .slide-bg-two {
@@ -55,10 +55,10 @@ Version: 1.0
 }
 
 .welcome-slider-area .owl-nav > div {
-    background: #d3ffea none repeat scroll 0 0;
+    background: rgb(93, 123, 179)none repeat scroll 0 0;
     border-radius: 50%;
     bottom: 0;
-    color: #31dc89;
+    color: whitesmoke;
     font-size: 35px;
     height: 50px;
     margin: 10px 0;
@@ -71,7 +71,7 @@ Version: 1.0
 }
 
 .welcome-slider-area .owl-nav > div:hover {
-    background: #31dc89 none repeat scroll 0 0;
+    background: #0039A6 none repeat scroll 0 0;
     color: #ffffff;
 }
 
@@ -125,9 +125,9 @@ Version: 1.0
 }
 
 a.enroll-button {
-    background: #d3ffea none repeat scroll 0 0;
+    background: #0039A6 none repeat scroll 0 0;
     border-radius: 50px;
-    color: #0be27a;
+    color: whitesmoke;
     padding: 10px 15px;
     text-transform: capitalize;
 }
@@ -520,7 +520,7 @@ label.mt10.valid {
 }
 
 .footer-bottom-area {
-    background: #2e2e43 none repeat scroll 0 0;
+    background: #B71234 none repeat scroll 0 0;
 }
 
 .footer-copyright {
@@ -532,7 +532,7 @@ label.mt10.valid {
 ----------------------------------*/
 
 .scrolltotop {
-    background: #404873 none repeat scroll 0 0;
+    background: rgb(189, 64, 89) none repeat scroll 0 0;
     bottom: 20px;
     color: #ffffff;
     display: none;
@@ -547,6 +547,6 @@ label.mt10.valid {
 }
 
 .scrolltotop:hover {
-    background: #3ee792;
+    background: #B71234;
     color: #ffffff;
 }
