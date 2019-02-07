@@ -28,7 +28,7 @@ Version: 1.0
 -----------------------------*/
 
 .slide-bg-one {
-    background: rgba(207, 207, 207, 0.514) url("assest/img/slider/slide_1.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("GaIA.png") no-repeat scroll center center / cover;
 }
 
 .slide-bg-two {
