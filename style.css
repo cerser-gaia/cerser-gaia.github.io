@@ -549,3 +549,24 @@ label.mt10.valid {
     background: #0039A6;
     color: #ffffff;
 }
+
+#ecsu_desc{
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+#nc_promise{
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 90%;
+}
+
+#communities{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+#icon{
+    width: 10%;
+    margin-right: 3%;
+}
