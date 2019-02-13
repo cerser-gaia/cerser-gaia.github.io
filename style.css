@@ -550,6 +550,25 @@ label.mt10.valid {
     color: #ffffff;
 }
 
+.tutorialtext {
+    text-align: left;
+    height: 100%;
+    width: 100%;
+}
+
+.tutorialimage {
+    height: 300;
+    width: 300;
+    align-content: center;
+    padding: 30px;
+    margin: 30px;
+}
+
+.listcontent li{
+    padding: 10;
+    margin: 10;
+}
+
 #ecsu_desc{
     margin-left: 2%;
     margin-top: 5%;
