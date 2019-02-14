@@ -590,18 +590,11 @@ label.mt10.valid {
     margin-right: 3%;
 }
 
-ul.sub-menu li{
-    padding-left:5px;
-    padding-top:5px;
-    padding-bottom:5px;
-}
-
-.navClass li:hover .sub-menu{
-    opacity:0;
-}
-
 ul.sub-menu li:hover{
     color:blue;
     background-color:red;
 }
 
+.sub-menu li{
+    color: white;
+    background-color: blue;
