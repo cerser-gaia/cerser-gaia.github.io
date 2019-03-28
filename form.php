@@ -41,8 +41,138 @@
             catch(PDOException $e){
                 echo $e->getMessage();
             }
+            
+            $studentnameErr = $schoolnameErr = $studidErr = $gradlevelErr = $subjectErr = $scoreErr = $csvfileErr = "";
+            $studentname = $schoolname = $studid = $gradlevel = $subject = $score = $csvfile = "";
+            $studentnameDB = $schoolnameDB = $studidDB = $gradlevelDB = $subjectDB = $scoreDB = $csvfileDB = 0;
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (empty($_POST["studentname"])) {
+                    $studentnameErr = "Name is required";
+                    $studentnameDB = 0;
+                } else {
+                    $studentname = test_input($_POST["studentname"]);
+                    $studentnameDB = 1;
+                }
+
+                if (empty($_POST["schoolname"])) {
+                    $schoolnameErr = "School Name is required";
+                    $schoolnameDB = 0;
+                } else {
+                    $schoolname = test_input($_POST["schoolname"]);
+                    $schoolnameDB = 1;
+                }
+
+                if (empty($_POST["studid"])) {
+                    $studidErr = "Student ID is required";
+                    $studidDB = 0;
+                } else {
+                    $studid = test_input($_POST["studid"]);
+                    $studidDB = 1;
+                }
+                
+                if (empty($_POST["gradlevel"])) {
+                    $gradlevelErr = "Student ID is required";
+                    $gradleveldDB = 0;
+                } else {
+                    $gradlevel = test_input($_POST["gradlevel"]);
+                    $gradlevelDB = 1;
+                } 
+                
+                if (empty($_POST["subject"])) {
+                    $subjectErr = "Student ID is required";
+                    $subjectDB = 0;
+                } else {
+                    $subject = test_input($_POST["subject"]);
+                    $subjectDB = 1;
+                }
+                
+                if (empty($_POST["score"])) {
+                    $scoreErr = "Student ID is required";
+                    $scoreDB = 0;
+                } else {
+                    $score = test_input($_POST["score"]);
+                    $scoreDB = 1;
+                }
+
+                if (empty($_FILES["csvfile"])){
+                    $csvfileErr = "No CSV selected";
+                    $csvfileDB = 0;
+                }   else{
+                    $csvfile = test_input($_FILES["file-select"]["csvfile"]);
+                    $csvfileDB = 1;
+                }
+            }
+
+            function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
         ?>
+
+        <?php
+            if(($csvfileDB == 1)){
+                $hostname = 'localhost';
+                $username = "root";
+                $password = "";
+                $dbname = "cerser-gaia";
+                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
+            
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
         
+                // Check connection    
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // insert query
+                if ($conn->query($sql) === TRUE) {
+                    echo "Your entry has been successfully inserted";
+                    header('Refresh: 2; URL = index.php');
+                } else {
+                    echo "Error entering into the database: " . $conn->error;
+                }
+
+                echo "HELLO";
+
+                while (($data = fgetcsv($csvfile, 1000, ",")) !== FALSE) 
+                {   
+                    echo "Hello";
+                    #$sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
+                }
+                $conn->close();
+            }
+
+            /*else if(($studentnameDB==1) && ($schoolname DB==1) && ($studidDB==1)){
+                $hostname = 'localhost';
+                $username = "root";
+                $password = "";
+                $dbname = "cerser-gaia";
+                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
+            
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+        
+                // Check connection    
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // insert query
+                $sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
+                if ($conn->query($sql) === TRUE) {
+                    echo "Your entry has been successfully inserted";
+                    header('Refresh: 2; URL = index.php');
+                } else {
+                    echo "Error entering into the database: " . $conn->error;
+                }
+                $conn->close();
+            }*/
+        ?>
+    
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -93,55 +223,45 @@
                 </div>
                 <!--END MAINMENU AREA END-->
             </div>
-
         </header>
         <!--END TOP AREA-->
 
         <section class="section-padding">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
-                            <div class="text-center wow fadeIn" style="text-align:left">
-                                <h2 class="xs-font20"><strong>Introduction To Macintosh</strong> </h2>
-                                <br>
-                                If you are already a Macintosh user, you may skip this section and move directly to the next section of the tutorial
-                                <br>
-                                <div class="tutorialtext">
-                                    <p> 
-                                        <strong>The Desktop</strong>
-                                        <br><br>
-                                        <img src="assest/img/imac-buyers-guide-2.png" height="100" width="100" style="align:center">
-                                        <br><br>
-                                        Think of your computer as an office. The work in progress is on your desk (desktop or
-                                        your Mac). Completed work is filed in a file cabinet (a storage disk-hard or floppy-on your
-                                        Mac). Items you no longer need, you throw in the trash (the trash can on the Mac).
-                                        <br>
-                                        Icons are symbols or pictures which represent things. The Macintosh uses icorn
-                                        (like the ones for the Macintosh Hard Drive and the Trash can) to represent
-                                        storage areas, programs, files, tools, etc
-                                        The Finder (whose icon looks like a monitor and is located in the upper right
-                                        corner of the screen) is the utility used to move between applications
-                                        Help balloons (next to the finder) give information that helps you use the
-                                        application with which you are working or any of its tools
-                                </div>
-                                <div class="tutorialtext">
-                                        <strong>Mouse Skills</strong>
-                                        <br><br>
-                                        <img src="assest/img/MacMouse.png" height="100" width="100" style="align:center">
-                                        <br><br> 
-                                        Holding the Mouse. (See Figure 1) Position the mouse with the cable pointing away from you. Rest the heel of your hand on the desk, your index finger on the mouse button, and your thumb and other two fingers on either side of the mousc. If you are left handed and find the position of the mouse on the right awkward, it can be moved to the left. When you move the mouse it moves an arrow on the screen.
-                                        Pointing means moving the mouse so the arrow rests on the item to which you may "double click" (click twice in rapid succession) on that icon or folder arrow on the item you wish to move, hold down the mouse button, and literally mouse on the mouse pad, simply pick up the mouse, without releasing the button
-                                        Clicking. Once the arrow is in position on the item you wish, you may select that item by clicking the button on the mouse. To open an icon or folder, you
-                                        Dragging. To move things around on the desktop or in a window, position the "drag" the item to the new location by moving the mouse. Running out of space on the mouse pad. If you run out of space to move the and place it back on the mouse pad in a position to allow you greater range of movement.
-                                        <br>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- input statements-->
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+                        Name: <input type="text" name="studentname" value="<?php echo $studentname;?>">
+                        <span class="error">* <?php echo $studentnameErr;?></span>
+                        <br><br>
+
+                        ID Number: <input type="text" name="studid" value="<?php echo $studid;?>">
+                        <span class="error">* <?php echo $studidErr;?></span>
+                        <br><br>
+
+                        School Name: <input type="text" name="schoolname" value="<?php echo $schoolname;?>">
+                        <span class="error">* <?php echo $schoolnameErr;?></span>
+                        <br><br>
+
+                        Grade Level: <input type="text" name="gradlevel" value="<?php echo $gradlevel;?>">
+                        <span class="error">* <?php echo $gradlevelErr;?></span>
+                        <br><br>
+
+                        Subject: <input type="text" name="subject" value="<?php echo $subject;?>">
+                        <span class="error">* <?php echo $subjectErr;?></span>
+                        <br><br>
+
+                        EOG Score: <input type="text" name="score" value="<?php echo $score;?>">
+                        <span class="error">* <?php echo $scoreErr;?></span>
+                        <br><br>
+                        
+                        <label for="file-select">Upload:</label>
+                            <input type="file" name="upload" id="file-select">
+                        
+                        <br><br>
+                        <input type="submit" name="submit" value="Submit">
+                    </form>
                 </div>
         </section>
-
 
         <!--FOOER AREA-->
         <footer class="footer-area sky-gray-bg relative">

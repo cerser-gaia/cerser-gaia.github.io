@@ -599,3 +599,7 @@ ul.sub-menu li:hover{
     color: white;
     background-color: blue;
 }
+
+.error{
+    color: red;
+}
