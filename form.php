@@ -48,7 +48,7 @@
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST["studentname"])) {
-                    $studentnameErr = "Name is required";
+                    //$studentnameErr = "Name is required";
                     $studentnameDB = 0;
                 } else {
                     $studentname = test_input($_POST["studentname"]);
@@ -56,7 +56,7 @@
                 }
 
                 if (empty($_POST["schoolname"])) {
-                    $schoolnameErr = "School Name is required";
+                    //$schoolnameErr = "School Name is required";
                     $schoolnameDB = 0;
                 } else {
                     $schoolname = test_input($_POST["schoolname"]);
@@ -64,7 +64,7 @@
                 }
 
                 if (empty($_POST["studid"])) {
-                    $studidErr = "Student ID is required";
+                    //$studidErr = "Student ID is required";
                     $studidDB = 0;
                 } else {
                     $studid = test_input($_POST["studid"]);
@@ -72,7 +72,7 @@
                 }
                 
                 if (empty($_POST["gradlevel"])) {
-                    $gradlevelErr = "Student ID is required";
+                    //$gradlevelErr = "Student ID is required";
                     $gradleveldDB = 0;
                 } else {
                     $gradlevel = test_input($_POST["gradlevel"]);
@@ -80,7 +80,7 @@
                 } 
                 
                 if (empty($_POST["subject"])) {
-                    $subjectErr = "Student ID is required";
+                    //$subjectErr = "Student ID is required";
                     $subjectDB = 0;
                 } else {
                     $subject = test_input($_POST["subject"]);
@@ -88,19 +88,11 @@
                 }
                 
                 if (empty($_POST["score"])) {
-                    $scoreErr = "Student ID is required";
+                    //$scoreErr = "Student ID is required";
                     $scoreDB = 0;
                 } else {
                     $score = test_input($_POST["score"]);
                     $scoreDB = 1;
-                }
-
-                if (empty($_FILES["csvfile"])){
-                    $csvfileErr = "No CSV selected";
-                    $csvfileDB = 0;
-                }   else{
-                    $csvfile = test_input($_FILES["file-select"]["csvfile"]);
-                    $csvfileDB = 1;
                 }
             }
 
@@ -113,6 +105,17 @@
         ?>
 
         <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_FILES["upload"]["name"])) {
+                    $csvfile = $_FILES["upload"]["name"];
+                    echo "File Was Uploaded AND OK";
+                    $csvfileDB = 1;
+                } else {
+                    echo "File Was Uploaded but BAD";
+                    $csvfileDB = 0;
+                }
+            }
+
             if(($csvfileDB == 1)){
                 $hostname = 'localhost';
                 $username = "root";
@@ -121,7 +124,7 @@
                 $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
             
                 // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                $conn = new mysqli($hostname, $username, $password, $dbname);
         
                 // Check connection    
                 if ($conn->connect_error) {
@@ -129,24 +132,25 @@
                 }
 
                 // insert query
-                if ($conn->query($sql) === TRUE) {
-                    echo "Your entry has been successfully inserted";
-                    header('Refresh: 2; URL = index.php');
-                } else {
-                    echo "Error entering into the database: " . $conn->error;
-                }
-
-                echo "HELLO";
-
-                while (($data = fgetcsv($csvfile, 1000, ",")) !== FALSE) 
+                //if ($conn->query($sql) === TRUE) {
+                //  echo "Your entry has been successfully inserted";
+                //    header('Refresh: 2; URL = index.php');
+                //} else {
+//                    echo "Error entering into the database: " . $conn->error;
+                //}
+                
+                $handle = fopen($csvfile, "r");
+                while (($data = fgetcsv($handle, 1000, ",", "\r")) !== FALSE)
                 {   
-                    echo "Hello";
-                    #$sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
+                    print_r($data);
                 }
+                fclose($handle);
                 $conn->close();
             }
+        ?>
 
-            /*else if(($studentnameDB==1) && ($schoolname DB==1) && ($studidDB==1)){
+        <?php
+            if(($studentnameDB==1) && ($schoolnameDB==1) && ($studidDB==1) && ($subjectDB == 1) && ($gradlevelDB == 1) && ($scoreDB == 1)){
                 $hostname = 'localhost';
                 $username = "root";
                 $password = "";
@@ -154,7 +158,7 @@
                 $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
             
                 // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                $conn = new mysqli($hostname, $username, $password, $dbname);
         
                 // Check connection    
                 if ($conn->connect_error) {
@@ -170,7 +174,7 @@
                     echo "Error entering into the database: " . $conn->error;
                 }
                 $conn->close();
-            }*/
+            }
         ?>
     
         <!--[if lt IE 8]>
@@ -229,7 +233,7 @@
         <section class="section-padding">
                 <div class="container">
                     <!-- input statements-->
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
                         Name: <input type="text" name="studentname" value="<?php echo $studentname;?>">
                         <span class="error">* <?php echo $studentnameErr;?></span>
                         <br><br>
@@ -255,7 +259,7 @@
                         <br><br>
                         
                         <label for="file-select">Upload:</label>
-                            <input type="file" name="upload" id="file-select">
+                            <input type="file" name="upload" id="upload">
                         
                         <br><br>
                         <input type="submit" name="submit" value="Submit">
