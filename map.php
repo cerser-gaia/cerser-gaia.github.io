@@ -85,3 +85,19 @@ map.setCenter(new GLatLng(0,0),0, G_SATELLITE_MAP);
 	  
 // ===== Start with an empty GLatLngBounds object =====     
 var bounds = new GLatLngBounds();
+// ===== determine the zoom level from the bounds =====
+map.setZoom(map.getBoundsZoomLevel(bounds));
+
+// ===== determine the centre from the bounds ======
+map.setCenter(bounds.getCenter());
+
+// === put the assembled side_bar_html contents into the custom control ===
+      labelContainer.innerHTML = side_bar_html;
+	  
+	  // put the assembled side_bar_html contents into the side_bar div
+      document.getElementById("side_bar").innerHTML = side_bar_html;
+
+//]]>
+</script>
+</body>
+</html>
