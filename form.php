@@ -130,11 +130,19 @@
                 }
 
                 // insert query
-                $sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
+                $sql = "INSERT INTO `student_data` (`Name`, `ID`, `School`) VALUES ('$studentname', '$studid', '$schoolname');";
+                $sql2 = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$studid', '$gradlevel', '$subject', '$score');";
+                
                 if ($conn->query($sql) === TRUE) {
-                    echo "Your entry has been successfully inserted";
-                    header('Refresh: 2; URL = form.php');
+                    //echo "Your entry has been successfully inserted";
+                    //header('Refresh: 2; URL = form.php');
                 } else {
+                    echo "Error entering into the database: " . $conn->error;
+                }
+                
+                if ($conn->query($sql2) === TRUE) {
+                    $conn->query($sql2);
+                } else{
                     echo "Error entering into the database: " . $conn->error;
                 }
                 $conn->close();
