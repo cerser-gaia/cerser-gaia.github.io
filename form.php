@@ -108,10 +108,10 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_FILES["upload"]["name"])) {
                     $csvfile = $_FILES["upload"]["name"];
-                    echo "File Was Uploaded AND OK";
+                    echo "File Was Uploaded AND OK<br>";
                     $csvfileDB = 1;
                 } else {
-                    echo "File Was Uploaded but BAD";
+                    echo "File Was Uploaded but BAD<br>";
                     $csvfileDB = 0;
                 }
             }
@@ -130,21 +130,36 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-
-                // insert query
-                //if ($conn->query($sql) === TRUE) {
-                //  echo "Your entry has been successfully inserted";
-                //    header('Refresh: 2; URL = index.php');
-                //} else {
-//                    echo "Error entering into the database: " . $conn->error;
-                //}
                 
-                $handle = fopen($csvfile, "r");
-                while (($data = fgetcsv($handle, 1000, ",", "\r")) !== FALSE)
-                {   
-                    print_r($data);
+                $file = fopen($csvfile, "r");
+                while (!feof($file)){   
+                    $content = fgetcsv($file, "r");
+                    $count = count($content);
+                    for($i = 0; $i < $count; $i++){
+                        echo $content[$i] . "<br /\n>";
+                        if($i == 0)
+                            $studentname = $content[$i];
+                        else if($i == 1)
+                            $studid = $content[$i];
+                        else if($i == 2)
+                            $subject = $content[$i];
+                        else if($i == 3)
+                            $gradlevel = $content[$i];
+                        else if($i == 4)
+                            $score = $content[$i];
+                        else
+                            $schoolname = $content[$i];
+                    }
+                    $sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
+                    echo $sql;
+                    
+                    //if ($conn->query($sql) === TRUE) {
+//                      echo "Your entry has been successfully inserted";
+  //                      header('Refresh: 2; URL = form.php');
+    //                } else {
+      //               echo "Error entering into the database: " . $conn->error;
+        //            }
                 }
-                fclose($handle);
                 $conn->close();
             }
         ?>
