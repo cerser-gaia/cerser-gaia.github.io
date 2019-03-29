@@ -94,6 +94,15 @@
                     $score = test_input($_POST["score"]);
                     $scoreDB = 1;
                 }
+
+                if ($_FILES["upload"]["name"] == 0) {
+                    $csvfile = $_FILES["upload"]["name"];
+                    //echo "File Was Uploaded AND OK<br>";
+                    $csvfileDB = 1;
+                } else {
+                    //echo "File Was Uploaded but BAD<br>";
+                    $csvfileDB = 0;
+                }
             }
 
             function test_input($data) {
@@ -101,66 +110,6 @@
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
             return $data;
-            }
-        ?>
-
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_FILES["upload"]["name"])) {
-                    $csvfile = $_FILES["upload"]["name"];
-                    echo "File Was Uploaded AND OK<br>";
-                    $csvfileDB = 1;
-                } else {
-                    echo "File Was Uploaded but BAD<br>";
-                    $csvfileDB = 0;
-                }
-            }
-
-            if(($csvfileDB == 1)){
-                $hostname = 'localhost';
-                $username = "root";
-                $password = "";
-                $dbname = "cerser-gaia";
-                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
-            
-                // Create connection
-                $conn = new mysqli($hostname, $username, $password, $dbname);
-        
-                // Check connection    
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-                
-                $file = fopen($csvfile, "r");
-                while (!feof($file)){   
-                    $content = fgetcsv($file, "r");
-                    $count = count($content);
-                    for($i = 0; $i < $count; $i++){
-                        echo $content[$i] . "<br /\n>";
-                        if($i == 0)
-                            $studentname = $content[$i];
-                        else if($i == 1)
-                            $studid = $content[$i];
-                        else if($i == 2)
-                            $subject = $content[$i];
-                        else if($i == 3)
-                            $gradlevel = $content[$i];
-                        else if($i == 4)
-                            $score = $content[$i];
-                        else
-                            $schoolname = $content[$i];
-                    }
-                    $sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
-                    echo $sql;
-                    
-                    //if ($conn->query($sql) === TRUE) {
-//                      echo "Your entry has been successfully inserted";
-  //                      header('Refresh: 2; URL = form.php');
-    //                } else {
-      //               echo "Error entering into the database: " . $conn->error;
-        //            }
-                }
-                $conn->close();
             }
         ?>
 
@@ -184,9 +133,38 @@
                 $sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$studentname', '$studid', '$subject', '$gradlevel', '$score', '$schoolname');";
                 if ($conn->query($sql) === TRUE) {
                     echo "Your entry has been successfully inserted";
-                    header('Refresh: 2; URL = index.php');
+                    header('Refresh: 2; URL = form.php');
                 } else {
                     echo "Error entering into the database: " . $conn->error;
+                }
+                $conn->close();
+            }
+
+            else if(($csvfileDB == 1)){
+                $hostname = 'localhost';
+                $username = "root";
+                $password = "";
+                $dbname = "cerser-gaia";
+                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
+            
+                // Create connection
+                $conn = new mysqli($hostname, $username, $password, $dbname);
+        
+                // Check connection    
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                $file=fopen($csvfile,"r"); // file pointer
+                while(!feof($file)){
+                    $row=fgetcsv($file);
+                    //$sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]');";
+                    $sql = "INSERT INTO `student_data` (`Name`, `ID`) VALUES ('$row[0]', '$row[1]');";
+                    if ($conn->query($sql) === TRUE) {
+                        //echo "";
+                    } else {
+                        //echo "Error entering into the database: " . $conn->error;
+                    }
                 }
                 $conn->close();
             }
