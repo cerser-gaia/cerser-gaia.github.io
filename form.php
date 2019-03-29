@@ -158,8 +158,18 @@
                 $file=fopen($csvfile,"r"); // file pointer
                 while(!feof($file)){
                     $row=fgetcsv($file);
-                    //$sql = "INSERT INTO `student_data` (`Name`, `ID`, `Subject`, `Grade_Level`, `EOG`, `School`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]');";
-                    $sql = "INSERT INTO `student_data` (`Name`, `ID`) VALUES ('$row[0]', '$row[1]');";
+                    $sql = "INSERT INTO `student_data` (`ID`, `Name`, `School`) VALUES ('$row[0]', '$row[1]', '$row[2]');";
+                    if ($conn->query($sql) === TRUE) {
+                        //echo "";
+                    } else {
+                        //echo "Error entering into the database: " . $conn->error;
+                    }
+                }
+
+                $file=fopen($csvfile,"r"); // file pointer
+                while(!feof($file)){
+                    $row=fgetcsv($file);
+                    $sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$row[0]', '$row[3]', '$row[4]', '$row[5]');";
                     if ($conn->query($sql) === TRUE) {
                         //echo "";
                     } else {
