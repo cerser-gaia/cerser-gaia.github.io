@@ -28,7 +28,56 @@
             <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
     </head>
+    <!DOCTYPE html>
+<html>
+    <header>
+        <title>Contact</title>
+        <link rel="stylesheet" href="homework_5.css">
+    </header>
     <body>
+    <script>
+        function validateForm() {
+            var csv = document.forms["validForm"]["upload"].value;
+            var name = document.forms["validForm"]["studentname"].value;
+            var id = document.forms["validForm"]["studid"].value;
+            var school = document.forms["validForm"]["schoolname"].value;
+            var grade = document.forms["validForm"]["gradlevel"].value;
+            var subject = document.forms["validForm"]["subject"].value;
+            var score = document.forms["validForm"]["score"];
+
+            if(csv != ""){
+                alert("Submitting: " + csv)
+            }
+            else if (name == "" && csv == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            else if (id == ""  && csv == "") {
+                alert("Student ID must be filled out");
+                return false;
+            }
+            else if (school == ""  && csv == "") {
+                alert("School Name must be filled out");
+                return false;
+            }
+            else if (grade == ""  && csv == "") {
+                alert("Grade level must be filled out");
+                return false;
+            }
+            else if(subject ==  ""  && csv == ""){
+                alert("EOG subject must be filled out");
+                return false;
+            }
+            else if(score == ""  && csv == ""){
+                alert("EOG score must be filled out");
+                return false;
+            }
+            else{
+                alert("Validating form information..\n" + "Student Name: " + name + "\nStudent ID: " + id + "\nSchool: " + school + "\nGrade: " + grade + "\nSubject: " + subject + "\nScore: " + score)
+                return true;
+            }
+        }
+    </script>
         <?php
             try{
                 $hostname = 'localhost';
@@ -42,13 +91,12 @@
                 echo $e->getMessage();
             }
             
-            $studentnameErr = $schoolnameErr = $studidErr = $gradlevelErr = $subjectErr = $scoreErr = $csvfileErr = "";
+            $studentnameErr = $schoolnameErr = $studidErr = $gradlevelErr = $subjectErr = $scoreErr = $csvfileErr = $err_message = "";
             $studentname = $schoolname = $studid = $gradlevel = $subject = $score = $csvfile = "";
             $studentnameDB = $schoolnameDB = $studidDB = $gradlevelDB = $subjectDB = $scoreDB = $csvfileDB = 0;
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST["studentname"])) {
-                    //$studentnameErr = "Name is required";
                     $studentnameDB = 0;
                 } else {
                     $studentname = test_input($_POST["studentname"]);
@@ -56,7 +104,6 @@
                 }
 
                 if (empty($_POST["schoolname"])) {
-                    //$schoolnameErr = "School Name is required";
                     $schoolnameDB = 0;
                 } else {
                     $schoolname = test_input($_POST["schoolname"]);
@@ -64,7 +111,6 @@
                 }
 
                 if (empty($_POST["studid"])) {
-                    //$studidErr = "Student ID is required";
                     $studidDB = 0;
                 } else {
                     $studid = test_input($_POST["studid"]);
@@ -72,7 +118,6 @@
                 }
                 
                 if (empty($_POST["gradlevel"])) {
-                    //$gradlevelErr = "Student ID is required";
                     $gradleveldDB = 0;
                 } else {
                     $gradlevel = test_input($_POST["gradlevel"]);
@@ -80,7 +125,6 @@
                 } 
                 
                 if (empty($_POST["subject"])) {
-                    //$subjectErr = "Student ID is required";
                     $subjectDB = 0;
                 } else {
                     $subject = test_input($_POST["subject"]);
@@ -88,7 +132,6 @@
                 }
                 
                 if (empty($_POST["score"])) {
-                    //$scoreErr = "Student ID is required";
                     $scoreDB = 0;
                 } else {
                     $score = test_input($_POST["score"]);
@@ -128,23 +171,35 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-
-                // insert query
-                $sql = "INSERT INTO `student_data` (`Name`, `ID`, `School`) VALUES ('$studentname', '$studid', '$schoolname');";
-                $sql2 = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$studid', '$gradlevel', '$subject', '$score');";
                 
+                // insert query
+                /*$sql = "INSERT INTO `student_data` (`Name`, `ID`, `School`) VALUES ('$studentname', '$studid', '$schoolname');";
                 if ($conn->query($sql) === TRUE) {
                     //echo "Your entry has been successfully inserted";
                     //header('Refresh: 2; URL = form.php');
                 } else {
-                    echo "Error entering into the database: " . $conn->error;
-                }
-                
-                if ($conn->query($sql2) === TRUE) {
-                    $conn->query($sql2);
+                    //echo "Error entering into the database: " . $conn->error;
+                }*/
+
+                /*$sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$studid', '$gradlevel', '$subject', '$score');";
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script type='text/javascript'>alert('Submission Successful');</script>";
+                    header('Refresh: 2; URL = map.php');
                 } else{
-                    echo "Error entering into the database: " . $conn->error;
+                    $err_message = "Error entering into the database: " . $conn->error;
+                    echo "<script type='text/javascript'>alert('$err_message');</script>";
+                }*/
+
+                //$sql = "SELECT AVG(Eog_data"
+                //$sql = "UPDATE `School_data` SET `EOG_average` = `AVG(Eog_data.Test_Score)` WHERE `AVG(Eog_data.Test_Score)` IN (SELECT AVG(`Eog_data.Test_Score`) FROM `School_data`, `Student_data`, `Eog_data` WHERE `School_data.Sname` = '$schoolname' AND `Student_data.ID` = `Eog_data.StudentId`";
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script type='text/javascript'>alert('Submission Successful');</script>";
+                    header('Refresh: 2; URL = map.php');
+                } else{
+                    $err_message = "Error entering into the database: " . $conn->error;
+                    echo "<script type='text/javascript'>alert('$err_message');</script>";
                 }
+
                 $conn->close();
             }
 
@@ -170,7 +225,8 @@
                     if ($conn->query($sql) === TRUE) {
                         //echo "";
                     } else {
-                        //echo "Error entering into the database: " . $conn->error;
+                        //$err_message = "Error entering into the database: " . $conn->error;
+                        //echo "<script type='text/javascript'>alert('$err_message');</script>";
                     }
                 }
 
@@ -179,10 +235,16 @@
                     $row=fgetcsv($file);
                     $sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$row[0]', '$row[3]', '$row[4]', '$row[5]');";
                     if ($conn->query($sql) === TRUE) {
-                        //echo "";
+                        // echo "<script type='text/javascript'>alert('h Submission Successful');</script>";
                     } else {
-                        //echo "Error entering into the database: " . $conn->error;
+                        $err_message = "Error entering into the database: " . $conn->error;
+                        echo "<script type='text/javascript'>alert('$err_message');</script>";
+                        break;
                     }
+                }
+                if($err_message == ""){ // File was successful
+                    echo "<script type='text/javascript'>alert('h Submission Successful');</script>";
+                    header('Refresh: 2; URL = map.php');
                 }
                 $conn->close();
             }
@@ -228,6 +290,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="form.php">Form</a></li>
+                                    <li><a href="map.php">Map</a></li>
                                     <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#">Download MultiSpec©</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                     <li><a href="#faqs">Faqs</a></li>
@@ -244,7 +307,7 @@
         <section class="section-padding">
                 <div class="container">
                     <!-- input statements-->
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
+                    <form name="validForm" onsubmit="return validateForm()" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
                         Name: <input type="text" name="studentname" value="<?php echo $studentname;?>">
                         <span class="error">* <?php echo $studentnameErr;?></span>
                         <br><br>
@@ -273,7 +336,8 @@
                             <input type="file" name="upload" id="upload">
                         
                         <br><br>
-                        <input type="submit" name="submit" value="Submit">
+                        <button onclick="submit()" name="submit">Submit</button>
+                        <!--input type="submit" name="submit" onclick="submit()"-->
                     </form>
                 </div>
         </section>
