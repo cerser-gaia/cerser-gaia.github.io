@@ -34,12 +34,12 @@
 	var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
 	// start the map in South-East England
 	map.addLayer(osm);
-    var marker = L.marker([36.302200, -76.223228]).addTo(map).bindPopup("Elizabeth City").openPopup();
+    //var marker = L.marker([36.302200, -76.223228]).addTo(map).bindPopup("Elizabeth City").openPopup();
 
 </script>
 
 <?php
-    $sql = "SELECT * FROM school_data";
+    $sql = "SELECT *, ROUND(AVG(eog_data.Test_Score), 2) AS AVERAGE, MAX(eog_data.Test_Score) as MAXV FROM school_data, student_data, eog_data WHERE school_data.Sname = student_data.School AND student_data.ID = eog_data.StudentId GROUP BY school_data.Sname";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -48,7 +48,9 @@
             $lat = $row['Latitude'];
             $lon = $row['Longitude'];
             $sch = $row['Sname'];
-            echo "<script> L.marker(['$lat', '$lon']).addTo(map).bindPopup('$sch').openPopup(); </script>";
+            $avg = $row['AVERAGE'];
+            $max = $row['MAXV'];
+            echo "<script>L.marker(['$lat', '$lon']).addTo(map).bindPopup('<strong><u><div align=center>$sch</div></u></strong>$row[Address]<br/><br><table style=font-size:100%;><tr align=center><td>Highest EOG Score</td><td>Average EOG Score</td></tr><tr align=center><td>$max</td><td>$avg</td></tr></table><br>').openPopup(); </script>";
         }
     } else {
         echo "0 results";
