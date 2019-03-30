@@ -83,7 +83,7 @@
                 $hostname = 'localhost';
                 $username = "root";
                 $password = "";
-                $dbname = "cerser-gaia";
+                $dbname = "ECSU-Cerser-Gaia";
                 $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
             }
 
@@ -161,7 +161,7 @@
                 $hostname = 'localhost';
                 $username = "root";
                 $password = "";
-                $dbname = "cerser-gaia";
+                $dbname = "ECSU-Cerser-Gaia";
                 $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
             
                 // Create connection
@@ -173,25 +173,15 @@
                 }
                 
                 // insert query
-                /*$sql = "INSERT INTO `student_data` (`Name`, `ID`, `School`) VALUES ('$studentname', '$studid', '$schoolname');";
+                $sql = "INSERT INTO `student_data` (`Name`, `ID`, `School`) VALUES ('$studentname', '$studid', '$schoolname');";
                 if ($conn->query($sql) === TRUE) {
                     //echo "Your entry has been successfully inserted";
                     //header('Refresh: 2; URL = form.php');
                 } else {
                     //echo "Error entering into the database: " . $conn->error;
-                }*/
+                }
 
-                /*$sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$studid', '$gradlevel', '$subject', '$score');";
-                if ($conn->query($sql) === TRUE) {
-                    echo "<script type='text/javascript'>alert('Submission Successful');</script>";
-                    header('Refresh: 2; URL = map.php');
-                } else{
-                    $err_message = "Error entering into the database: " . $conn->error;
-                    echo "<script type='text/javascript'>alert('$err_message');</script>";
-                }*/
-
-                //$sql = "SELECT AVG(Eog_data"
-                //$sql = "UPDATE `School_data` SET `EOG_average` = `AVG(Eog_data.Test_Score)` WHERE `AVG(Eog_data.Test_Score)` IN (SELECT AVG(`Eog_data.Test_Score`) FROM `School_data`, `Student_data`, `Eog_data` WHERE `School_data.Sname` = '$schoolname' AND `Student_data.ID` = `Eog_data.StudentId`";
+                $sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$studid', '$gradlevel', '$subject', '$score');";
                 if ($conn->query($sql) === TRUE) {
                     echo "<script type='text/javascript'>alert('Submission Successful');</script>";
                     header('Refresh: 2; URL = map.php');
@@ -207,7 +197,7 @@
                 $hostname = 'localhost';
                 $username = "root";
                 $password = "";
-                $dbname = "cerser-gaia";
+                $dbname = "ECSU-Cerser-Gaia";
                 $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
             
                 // Create connection
@@ -222,6 +212,7 @@
                 while(!feof($file)){
                     $row=fgetcsv($file);
                     $sql = "INSERT INTO `student_data` (`ID`, `Name`, `School`) VALUES ('$row[0]', '$row[1]', '$row[2]');";
+                    //echo $sql;
                     if ($conn->query($sql) === TRUE) {
                         //echo "";
                     } else {
@@ -233,7 +224,8 @@
                 $file=fopen($csvfile,"r"); // file pointer
                 while(!feof($file)){
                     $row=fgetcsv($file);
-                    $sql = "INSERT INTO `Eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$row[0]', '$row[3]', '$row[4]', '$row[5]');";
+                    $sql = "INSERT INTO `eog_data` (`StudentId`, `Grade_Level`, `Test_Subject`, `Test_Score`) VALUES ('$row[0]', '$row[3]', '$row[4]', '$row[5]');";
+                    //echo $sql;
                     if ($conn->query($sql) === TRUE) {
                         // echo "<script type='text/javascript'>alert('h Submission Successful');</script>";
                     } else {
@@ -243,7 +235,7 @@
                     }
                 }
                 if($err_message == ""){ // File was successful
-                    echo "<script type='text/javascript'>alert('h Submission Successful');</script>";
+                    echo "<script type='text/javascript'>alert('Submission Successful');</script>";
                     header('Refresh: 2; URL = map.php');
                 }
                 $conn->close();

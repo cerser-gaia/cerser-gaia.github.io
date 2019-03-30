@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2019 at 02:47 AM
+-- Generation Time: Mar 20, 2019 at 09:35 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `school_data` (
+  `ID` int(5) NOT NULL,
   `Country` varchar(100) COLLATE utf8_bin NOT NULL,
   `City` varchar(100) COLLATE utf8_bin NOT NULL,
   `Address` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Sname` varchar(100) COLLATE utf8_bin NOT NULL,
-  `EOG_average` float NOT NULL,
+  `Sname` varchar(50) COLLATE utf8_bin NOT NULL,
   `Latitude` double NOT NULL,
   `Longitude` double NOT NULL,
   `Date` date NOT NULL
@@ -43,10 +43,10 @@ CREATE TABLE `school_data` (
 -- Dumping data for table `school_data`
 --
 
-INSERT INTO `school_data` (`Country`, `City`, `Address`, `Sname`, `EOG_average`, `Latitude`, `Longitude`, `Date`) VALUES
-('United States', 'Elizabeth City', '1066 Northside Road', 'Elizabeth City Middle School', 1, 36.36788, -76.271168, '2019-03-20'),
-('United States', 'Winfall', '312 Main St', 'Perquimans County Middle School', 1, 36.2189984, -76.4646558, '2019-03-29'),
-('United States', 'Elizabeth City', '1701 River Rd', 'River Road Middle School', 1, 36.275586, -76.197688, '2019-03-20');
+INSERT INTO `school_data` (`ID`, `Country`, `City`, `Address`, `Sname`, `Latitude`, `Longitude`, `Date`) VALUES
+(1, 'United States', 'Elizabeth City', '1701 River Rd', 'River Road Middle School', 36.275586, -76.197688, '2019-03-20'),
+(5, 'United States', 'Elizabeth City', '1066 Northside Road', 'Elizabeth City Middle School', 36.36788, -76.271168, '2019-03-20'),
+(6, 'United States', 'Elizabeth City', 'Fine Art Ways', 'Northeast Academy for Aerospace and Advanced Techn', 36.277791, -76.212295, '2019-03-20');
 
 --
 -- Indexes for dumped tables
@@ -56,7 +56,17 @@ INSERT INTO `school_data` (`Country`, `City`, `Address`, `Sname`, `EOG_average`,
 -- Indexes for table `school_data`
 --
 ALTER TABLE `school_data`
-  ADD PRIMARY KEY (`Sname`);
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `school_data`
+--
+ALTER TABLE `school_data`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
