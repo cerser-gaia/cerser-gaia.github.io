@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2019 at 02:47 AM
+-- Generation Time: Apr 01, 2019 at 10:00 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cerser-gaia`
+-- Database: `ECSU-Cerser-Gaia`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +44,9 @@ CREATE TABLE `school_data` (
 --
 
 INSERT INTO `school_data` (`Country`, `City`, `Address`, `Sname`, `EOG_average`, `Latitude`, `Longitude`, `Date`) VALUES
+('United States', 'South Mills', '248 Scotland Rd, Camden, NC 27921', 'Camden Middle School', 0, 36.3622, -76.17542, '2019-03-29'),
 ('United States', 'Elizabeth City', '1066 Northside Road', 'Elizabeth City Middle School', 1, 36.36788, -76.271168, '2019-03-20'),
+('United States', 'Moyock', '216 Survey Rd', 'Moyock Middle School', 0, 36.50182, -76.15643, '2019-03-29'),
 ('United States', 'Winfall', '312 Main St', 'Perquimans County Middle School', 1, 36.2189984, -76.4646558, '2019-03-29'),
 ('United States', 'Elizabeth City', '1701 River Rd', 'River Road Middle School', 1, 36.275586, -76.197688, '2019-03-20');
 
