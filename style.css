@@ -607,3 +607,7 @@ ul.sub-menu li:hover{
 .error{
     color: red;
 }
+
+#eog_text{
+    color: #171932;
+}

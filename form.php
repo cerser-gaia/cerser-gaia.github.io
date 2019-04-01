@@ -79,18 +79,6 @@
         }
     </script>
         <?php
-            try{
-                $hostname = 'localhost';
-                $username = "root";
-                $password = "";
-                $dbname = "ECSU-Cerser-Gaia";
-                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
-            }
-
-            catch(PDOException $e){
-                echo $e->getMessage();
-            }
-            
             $studentnameErr = $schoolnameErr = $studidErr = $gradlevelErr = $subjectErr = $scoreErr = $csvfileErr = $err_message = "";
             $studentname = $schoolname = $studid = $gradlevel = $subject = $score = $csvfile = "";
             $studentnameDB = $schoolnameDB = $studidDB = $gradlevelDB = $subjectDB = $scoreDB = $csvfileDB = 0;
@@ -295,10 +283,13 @@
             </div>
         </header>
         <!--END TOP AREA-->
-
         <section class="section-padding">
                 <div class="container">
                     <!-- input statements-->
+                    <div align="center">
+                        <h2 class="xs-font26">EOG Score Form</h2><br>
+                        <p id="eog_text">Enter in the student EOG score (Student EOG scores can be imported from a csv file)</p>
+                    </div>
                     <form name="validForm" onsubmit="return validateForm()" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
                         Name: <input type="text" name="studentname" value="<?php echo $studentname;?>">
                         <span class="error">* <?php echo $studentnameErr;?></span>
@@ -329,7 +320,6 @@
                         
                         <br><br>
                         <button onclick="submit()" name="submit">Submit</button>
-                        <!--input type="submit" name="submit" onclick="submit()"-->
                     </form>
                 </div>
         </section>
