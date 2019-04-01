@@ -586,8 +586,12 @@ label.mt10.valid {
 }
 
 #icon{
-    width: 10%;
+    width: 8%;
     margin-right: 3%;
+}
+
+#icon:hover{
+    transform: scale(1.1);
 }
 
 ul.sub-menu li:hover{
