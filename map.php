@@ -14,7 +14,7 @@
       $hostname = 'localhost';
       $username = "root";
       $password = "";
-      $dbname = "ECSU-Cerser-Gaia";
+      $dbname = "SDCT";
       $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
 
       $conn = new mysqli($hostname, $username, $password, $dbname);
