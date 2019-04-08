@@ -15,7 +15,7 @@
     <meta name="keywords" content="App, Landing, Business, Onepage, Html, Business" />
 
     <!--====== TITLE TAG ======-->
-    <title><?php echo $_GET["User"]." "."Login"?></title>
+    <title><?php echo "SDCT ".$_GET["User"]." "."Login"?></title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="assest/img/favicon.png" />
