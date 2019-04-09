@@ -205,7 +205,7 @@
         ?>
 
     <?php
-        if(($studentnameDB==1) && ($schoolnameDB==1) && ($studidDB==1) && ($emailDB == 1) && ($gradlevelDB == 1) && ($roomcodeDB == 1)) && ($passwordDB == 1)) && ($passwordconfirmDB == 1)){
+        if(($studentnameDB==1) && ($schoolnameDB==1) && ($studidDB==1) && ($emailDB == 1) && ($gradlevelDB == 1) && ($roomcodeDB == 1) && ($passwordDB == 1) && ($passwordconfirmDB == 1)){
             $hostname = 'localhost';
             $username = "root";
             $password = "";
