@@ -102,8 +102,7 @@
                 }
                 
                 // insert query
-                $stmt = $DBH->prepare("SELECT `Tname` FROM `district_teacher` WHERE `Tpswrd` = ?");
-		        $stmt->bindParam(1, $tepswrd);
+                $stmt = "SELECT `Tname` FROM `district_teacher` WHERE `Tpswrd` = $tepswrd;";
                 
                 if ($conn->query($stmt) === TRUE) {
                     //echo "Your entry has been successfully inserted";
@@ -160,7 +159,7 @@
                         <p id="eog_text">Enter in the student EOG score (Student EOG scores can be imported from a csv file)</p>
                     </div>
                     <form name="validForm" onsubmit="return validateForm()" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
-                        Email: <input type="text" name="teemail" value="<?php echo $teemail;?>">
+                        Email: <input type="email" name="teemail" value="<?php echo $teemail;?>">
                         <span class="error">* <?php echo $teemailErr;?></span>
                         <br><br>
 
