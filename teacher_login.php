@@ -101,7 +101,6 @@
                     echo $e->getMessage();
                 }
                 
-<<<<<<< HEAD
                 // insert query
                 $stmt = "SELECT `Tname` FROM `district_teacher` WHERE `Tpswrd` = $tepswrd;";
                 
@@ -110,7 +109,6 @@
                     //header('Refresh: 2; URL = form.php');
                 } else {
                     echo "Error entering into the database: " . $conn->error;
-=======
                 try{
                     $stmt = $DBH->query("SELECT * FROM district_teacher WHERE Temail='$teemail' AND Tpsword='$tepswrd'");
                     if(!$stmt){
@@ -121,7 +119,6 @@
                         echo "<script type='text/javascript'>alert('Submission Successful');</script>";
                         header('Refresh: 2; URL = teacher_login.php');
                     }
->>>>>>> 7c4b7382f185aa2162d911858e47b2239895f85b
                 }
                 catch(PDOException $e){
                     echo "<script type='text/javascript'>alert('$e->getMessage()')</script>";
