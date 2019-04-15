@@ -663,15 +663,3 @@ ul.sub-menu li:hover{
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {background-color: blue;}
-
-  #Teacher{
-    display: none;
-  }
-
-  #Student{
-    display: none;
-  }
-
-  #Parent{
-    display: none;
-  }

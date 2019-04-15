@@ -82,6 +82,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li><a href="form.php">Form</a></li>
+                                <li><a href="map.php">Map</a></li>
                                 <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#">Download MultiSpec©</a></li>
                                 <li><a href="#contact">Contact</a></li>
                                 <li><a href="#faqs">Faqs</a></li>
@@ -136,9 +138,9 @@
                     <div class="single-course mb20">
                         <img src="assest/img/MacMouse.png" alt="">
                         <div class="course-details padding30" style="margin-bottom:5.5%">
-                            <h3 class="font18">Introduction To Macintosh</h3>
+                            <h3 class="font18">Teacher Login</h3>
                             <p>A short introductory course on the basics of Macintosh.</p>
-                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Go To Tutorial</a> </p>
+                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Login</a><a href="tutorial_7.html" class="enroll-button">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
@@ -146,9 +148,9 @@
                     <div class="single-course mb20">
                         <img src="assest/img/tutorial_2/multispec_icon_website.jpg" alt="">
                         <div class="course-details padding30">
-                            <h3 class="font18">Opening and Viewing an Image (MultiSpec)</h3>
+                            <h3 class="font18">Parent Login</h3>
                             <p>A tutorial showing the user how open an image using the MultiSpec software.</p>
-                            <p class="mt30"><a href="tutorial_2.html" class="enroll-button">Go To Tutorial</a> </p>
+                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Login</a><a href="tutorial_7.html" class="enroll-button">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
@@ -158,9 +160,9 @@
                             <img src="assest/img/tutorial_3/app-resizeme-512.png" alt="" style="width: 60%; margin-bottom: -3%;">
                         </div>
                         <div class="course-details padding30">
-                            <h3 class="font18">Resizing and Modifing an Image: Part 1</h3>
+                            <h3 class="font18">Student Login</h3>
                             <p>A tutorial showing the user how to change the size and display values of an image.</p>
-                            <p class="mt30"><a href="tutorial_3.html" class="enroll-button">Go To Tutorial</a> </p>
+                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Login</a><a href="tutorial_7.html" class="enroll-button">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
@@ -170,9 +172,9 @@
                             <img src="assest/img/tutorial_3/app-resizeme-512.png" alt="" style="width: 60%; margin-bottom: -3%;">
                         </div>
                         <div class="course-details padding30">
-                            <h3 class="font18">Resizing and Modifing an Image: Part 2</h3>
+                            <h3 class="font18">Visit School District Map</h3>
                             <p>A tutorial showing the user how to change the size and display values of an image.</p>
-                            <p class="mt30"><a href="tutorial_4.html" class="enroll-button">Go To Tutorial</a> </p>
+                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Login</a><a href="tutorial_7.html" class="enroll-button">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
@@ -182,7 +184,7 @@
                         <div class="course-details padding30">
                             <h3 class="font18">Exploring MultiSpec: Part 1</h3>
                             <p>A tutorial that goes over some of the main functions within MultiSpec.</p>
-                            <p class="mt30"><a href="tutorial_6.html" class="enroll-button">Go To Tutorial</a> </p>
+                            <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Login</a><a href="tutorial_7.html" class="enroll-button">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
@@ -192,6 +194,7 @@
                         <div class="course-details padding30">
                             <h3 class="font18">Exploring MultiSpec: Part 2</h3>
                             <p>A tutorial that goes over some of the main functions within MultiSpec.</p>
+                            <p class="mt30"><a href="tutorial_7.html" class="enroll-button">Go To Tutorial</a> </p>
                             <p class="mt30"><a href="tutorial_7.html" class="enroll-button">Go To Tutorial</a> </p>
                         </div>
                     </div>
@@ -204,19 +207,13 @@
     <!--ALL COURSE AREA-->
     <div class="dropdown">
         <div class=" text-center wow fadeIn">
-            <br><br><h2 class="xs-font26"><u>All Courses Menu</u></h2><br><br>
+            <h2 class="xs-font26"><u>All Courses Menu</u></h2>
         </div>
         <div class="dropdown-content">
             <div id="dropdown-container">
                 <div> <h3 class="font22">Introduction To Macintosh</h3> </div>
                 <div> <p class="font18">A short introductory course on the basics of Macintosh.</p> </div>
                 <div style="margin-bottom:10px;"> <p class="mt30"><a href="tutorial_1.html" class="enroll-button">Go To Tutorial</a> </p> </div>
-                <hr>
-            </div>
-            <div id="dropdown-container">
-                <div> <h3 class="font22">Opening and Viewing an Image (MultiSpec)</h3> </div>
-                <div> <p class="font18">A tutorial showing the user how open an image using the MultiSpec software.</p> </div>
-                <div style="margin-bottom:10px;"> <p class="mt30"><a href="tutorial_2.html" class="enroll-button">Go To Tutorial</a> </p> </div>
                 <hr>
             </div>
             <div id="dropdown-container">
