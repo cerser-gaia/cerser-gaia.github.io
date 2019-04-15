@@ -89,29 +89,43 @@
 
         <?php
             if(($teemailDB==1) && ($tepswrdDB==1)){
-                $hostname = 'localhost';
-                $username = "root";
-                $password = "";
-                $dbname = "SDCT";
-                $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
-                // Create connection
-                $conn = new mysqli($hostname, $username, $password, $dbname);
-                // Check connection    
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                try{
+                    $hostname = 'localhost';
+                    $dbname = 'SDCT';
+                    $username = 'root';
+                    $password = '';
+                    $DBH = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8mb4", $username, $password);
+                    echo 'Connected';
+                }
+                catch(PDOException $e){
+                    echo $e->getMessage();
                 }
                 
                 // insert query
-                $stmt = $DBH->prepare("SELECT `Tname` FROM `district_teacher` WHERE `Tpswrd` = ?");
-		        $stmt->bindParam(1, $tepswrd);
+                $stmt = "SELECT `Tname` FROM `district_teacher` WHERE `Tpswrd` = $tepswrd;";
                 
                 if ($conn->query($stmt) === TRUE) {
                     //echo "Your entry has been successfully inserted";
                     //header('Refresh: 2; URL = form.php');
                 } else {
                     echo "Error entering into the database: " . $conn->error;
+                try{
+                    $stmt = $DBH->query("SELECT * FROM district_teacher WHERE Temail='$teemail' AND Tpsword='$tepswrd'");
+                    if(!$stmt){
+                        echo "<script>alert('Incorrect email/password was entered')</script>";
+                        $DBH = NULL;
+                    }
+                    else{
+                        echo "<script type='text/javascript'>alert('Submission Successful');</script>";
+                        header('Refresh: 2; URL = teacher_login.php');
+                    }
                 }
-                $conn->close();
+                catch(PDOException $e){
+                    echo "<script type='text/javascript'>alert('$e->getMessage()')</script>";
+                }
+
+                // remove connection
+                $DBH = NULL;
             }
         ?>
     
@@ -160,7 +174,7 @@
                         <p id="eog_text">Enter in the student EOG score (Student EOG scores can be imported from a csv file)</p>
                     </div>
                     <form name="validForm" onsubmit="return validateForm()" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">  
-                        Email: <input type="text" name="teemail" value="<?php echo $teemail;?>">
+                        Email: <input type="email" name="teemail" value="<?php echo $teemail;?>">
                         <span class="error">* <?php echo $teemailErr;?></span>
                         <br><br>
 
