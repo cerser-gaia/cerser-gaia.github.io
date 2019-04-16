@@ -1,0 +1,238 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zxx">
+<!--<![endif]-->
+
+<head>
+    <!--====== USEFULL META ======-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="APPTON HTML5 Template is a simple Smooth Personal App Landing Template" />
+    <meta name="keywords" content="App, Landing, Business, Onepage, Html, Business" />
+
+    <!--====== TITLE TAG ======-->
+    <title>Creating a map with QGIS</title>
+
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="assest/img/favicon.png" />
+
+    <!--====== STYLESHEETS ======-->
+    <link href="assest/css/plugins.css" rel="stylesheet">
+    <link href="assest/css/theme.css" rel="stylesheet">
+    <link href="assest/css/icons.css" rel="stylesheet">
+
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="style.css" rel="stylesheet">
+    <link href="assest/css/responsive.css" rel="stylesheet">
+
+    <script src="assest/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#scroolup" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="header-top-area" id="scroolup">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="#home" class="navbar-brand"><img src="assest/img/ecsu_logo.png" height="60" width="150" alt="logo"></a>
+                        </div>
+                        <div id="main-nav" class="stellarnav">
+                            <ul id="nav" class="nav navbar-nav pull-right">
+                                <li class="active"><a href="#">Home</a>
+                                <li><a href="#courses">Courses</a>
+                                    <ul class= "sub-menu">
+                                        <li><a href="tutorial_1.html">Introduction</a></li>
+                                        <li><a href="tutorial_2.html">Opening and Viewing an Image</a></li>
+                                        <li>
+                                            <a>Resizing and Modifing an Image</a>
+                                            <ul>
+                                                <li><a href="tutorial_3.html">Resizing and Modifing an Image Part 1</a></li>
+                                                <li><a href="tutorial_4.html">Resizing and Modifing an Image Part 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>Using QGIS</a>
+                                            <ul>
+                                                <li><a href="qgis_tutorial_1.html">Creating a map with QGIS: Part 1</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Exploring MultiSpec</a>
+                                            <ul>
+                                                <li><a href="tutorial_6.html">Exploring MultiSpec: Part 1</a>
+                                                <li><a href="tutorial_7.html">Exploring MultiSpec: Part 2</a></li>
+                                                <li><a href="tutorial_8.html">Exploring MultiSpec: Part 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#">Download MultiSpec©</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#faqs">Faqs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--END MAINMENU AREA END-->
+        </div>
+
+    </header>
+    <!--END TOP AREA-->
+
+    <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
+                        <div class="text-center wow fadeIn" style="text-align:left">
+                            <h2 class="xs-font20"><strong>Creating a map with QGIS: Part 1</strong> </h2>
+                            <br><br>
+                            <div class="tutorialtext">
+                                <p>
+                                    This section of the tutorial is going to show you how to create a map using a pre-existing dataset. 
+                                </p>
+                                <br><br>
+                                <ul class="listcontent">
+                                    <li><p>Download the Natural Earth Quick Start Kit dataset <a href="http://naciscdn.org/naturalearth/packages/Natural_Earth_quick_start.zip">here</a> and extract it. </p></li>
+                                    <li><p>Now, using the spotlight search open the QGIS software.</p></li>
+                                    <img src="assest/img/qgis_1/spotlight.png" class="tutorialimage">
+                                    <li><p>Once QGIS is open, click the <strong>Open</strong> under <strong>Project</strong>.</p></li>
+                                    <img src="assest/img/qgis_1/open.png" class="tutorialimage">
+                                    <li><p>This will open a new window. From here navigate to the extracted folder and select the file titled <strong>Natural_Earth_quick_start_for_QGIS.qgs</strong> and click open.</p></li>
+                                    <img src="assest/img/qgis_1/folder.png" class="tutorialimage">
+                                    <img src="assest/img/qgis_1/open_file.png" class="tutorialimage">
+                                    <li><p>Once the file is open it should look like the following: </p></li>
+                                    <img src="assest/img/qgis_1/map_open.png" class="tutorialimage">
+                                    <li><p>Use the zoom tool (located towards the top of the window) to zoom in on the North Carolna coast.</p></li>
+                                    <img src="assest/img/qgis_1/zoom.png" class="tutorialimage">
+                                    <img src="assest/img/qgis_1/nc_coast.png" class="tutorialimage">
+                                    <li><p>Next, we're going to uncheck a couple of layers. Unchecking a layer removes it from immediate view. This will make our map a bit more readable.</p></li>
+                                    <li><p>Layers are located in the lower left corner of the window and is label accordingly.</p></li>
+                                    <li><p>Uncheck the boxes labeled <strong>10m_geography_marine_polys</strong> and <strong>10m_admin_0_map_units</strong>.</p></li>
+                                    <img src="assest/img/qgis_1/unchecked.png" class="tutorialimage">
+                                    <li><p>In the next tutorial we will add some standard map elements.</p></li>
+                                </ul>
+                                <p>Continue to <a href="tutorial_3.html">next tutorial</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!--FOOER AREA-->
+    <footer class="footer-area sky-gray-bg relative">
+        <div class="footer-top-area padding-80-80 bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                        <div class="single-footer footer-about sm-mb50 xs-mb50 sm-center xs-center">
+                            <div class="footer-logo mb30">
+                                <a href="https://www.ecsu.edu"><img src="assest/img/ecsu_logo.png" alt=""></a>
+                                <p id="ecsu_desc">A constituent institution of the <br> University of North Carolina System</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
+                        <div class="single-footer footer-list white xs-center xs-mb50">
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Privicy Policy</a></li>
+                                <li><a href="#">Testmonial</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-8 col-xs-12">
+                        <div class="single-footer footer-subscribe white xs-center">
+                            <h3 class="mb30 xs-font18">Subscribe Our Newsletter</h3>
+                            <p>Doubtful for answered one fat indulged margaret sir shutters together. Ladies so in wholly .</p>
+                            <div class="subscriber-form-area mt50 wow fadeIn">
+                                <!--<form action="#" class="subscriber-form mb100">
+                                    <input type="email" name="email" id="email" placeholder="Email Address">
+                                    <button type="submit">Subscribe</button>
+                                </form>-->
+                                <form id="mc-form" class="subscriber-form">
+                                    <label class="mt10" for="mc-email"></label>
+                                    <input type="email" id="mc-email" placeholder="email@example.com">
+                                    <button type="submit" class="plus-btn"><i class="fa fa-paper-plane-o"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="footer-copyright text-center wow fadeIn">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--FOOER AREA END-->
+
+
+    <!--====== SCRIPTS JS ======-->
+    <script src="assest/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assest/js/vendor/bootstrap.min.js"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="assest/js/vendor/jquery.easing.1.3.js"></script>
+    <script src="assest/js/vendor/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assest/js/vendor/jquery.appear.js"></script>
+    <script src="assest/js/owl.carousel.min.js"></script>
+    <script src="assest/js/stellar.js"></script>
+    <script src="assest/js/waypoints.min.js"></script>
+    <script src="assest/js/jquery.counterup.min.js"></script>
+    <script src="assest/js/wow.min.js"></script>
+    <script src="assest/js/jquery-modal-video.min.js"></script>
+    <script src="assest/js/stellarnav.min.js"></script>
+    <script src="assest/js/placeholdem.min.js"></script>
+    <script src="assest/js/contact-form.js"></script>
+    <script src="assest/js/jquery.ajaxchimp.js"></script>
+    <script src="assest/js/jquery.sticky.js"></script>
+
+    <!--===== ACTIVE JS=====-->
+    <script src="assest/js/main.js"></script>
+
+    <!--===== MAPS JS=====-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTS_KEDfHXYBslFTI_qPJIybDP3eceE-A&sensor=false"></script>
+    <script src="assest/js/maps.active.js"></script>
+</body>
+
+</html>
