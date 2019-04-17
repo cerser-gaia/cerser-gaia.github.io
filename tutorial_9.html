@@ -15,7 +15,7 @@
     <meta name="keywords" content="App, Landing, Business, Onepage, Html, Business" />
 
     <!--====== TITLE TAG ======-->
-    <title>Creating a map with QGIS</title>
+    <title>Exploring MultiSpec</title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="assest/img/icon/ecsu_logo.png" />
@@ -75,7 +75,7 @@
                                                 <li><a href="tutorial_4.html">Resizing and Modifing an Image Part 2</a></li>
                                             </ul>
                                         </li>
-                                        <li>
+                                         <li>
                                             <a>Using QGIS</a>
                                             <ul>
                                                 <li><a href="qgis_tutorial_1.html">Creating a map with QGIS: Part 1</a></li>
@@ -94,31 +94,24 @@
                                 </li>
                                 <li><a href="#labs">Labs</a>
                                     <ul class="sub-menu">
-                                        <li><a href="multispec_lesson.html">MultiSpec© Lessons</a>
+                                        <li><a href="#multispec">MultiSpec© Lessons</a>
                                             <ul>
-                                                <li><a href="multispec_lesson.html#part1">What is a satellite?</a></li>
-                                                <li><a href="multispec_lesson.html#part2">What is a pixel?</a></li>
-                                                <li><a href="multispec_lesson.html#part3">What does digital mean?</a></li>
-                                                <li><a href="multispec_lesson.html#part4">What or how does satellite gather information?</a></li>
-                                                <li><a href="multispec_lesson.html#part5">How does a satellite send this information back so it will be useful?</a></li>
-                                                <li><a href="multispec_lesson.html#part6">What are different purpose for using satellite?for what purpose would you like to see satellite used?</a></li>
-                                                <li><a href="multispec_lesson.html#part7">For what purpose would you like to see satellite used?</a></li>
+                                                <li><a href="exercise_1.html">What is a satellite?</a></li>
+                                                <li><a href="exercise_2.html">What does digital mean?</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="qgis_lesson.html">QGIS Lessons</a>
+                                        <li><a href="#multispec">QGIS Lessons</a>
                                             <ul>
-                                                <li><a href="qgis_lesson.html#part1">What is a satellite?</a></li>
-                                                <li><a href="qgis_lesson.html#part2">What does digital mean?</a></li>
-                                                <li><a href="qgis_lesson.html#part3">What is a satellite?</a></li>
-                                                <li><a href="qgis_lesson.html#part4">What does digital mean?</a></li>
+                                                <li><a href="exercise_1.html">What is a satellite?</a></li>
+                                                <li><a href="exercise_2.html">What does digital mean?</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#" target="_blanks">Download MultiSpec©</a></li>
                                 <li><a href="https://qgis.org/en/site/index.html" target="_blanks">Download QGIS</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                                <li><a href="#faqs">Faqs</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                                <li><a href="index.html#faqs">Faqs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -135,34 +128,101 @@
                 <div class="row">
                     <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
                         <div class="text-center wow fadeIn" style="text-align:left">
-                            <h2 class="xs-font20"><strong>Creating a map with QGIS: Part 1</strong> </h2>
+                            <h2 class="xs-font20"><strong>Exploring MultiSpec</strong> </h2>
                             <br><br>
                             <div class="tutorialtext">
+                                <h4>Image Enhancement</h4>
                                 <p>
-                                    This section of the tutorial is going to show you how to create a map using a pre-existing dataset. 
+                                    In this exercise, you will display an aircraft image of a portion of the Davis Purdue Agriculture Center in Randolf County, Indiana and view the data in several ways using MultiSpec.
+                                    <br><br>
+                                    Requirements: MultiSpec application and image titled “ag020522_DPAC_cd.lan”., which you can download <a href="https://delmar.instructure.com/courses/1271277/files/54209290/download?verifier=tYxyFreEZW81U8yxJ3zYKE2PpoCyTtn3fmJLkg1L&wrap=1">here</a>.
                                 </p>
                                 <br><br>
                                 <ul class="listcontent">
-                                    <li><p>Download the Natural Earth Quick Start Kit dataset <a href="http://naciscdn.org/naturalearth/packages/Natural_Earth_quick_start.zip">here</a> and extract it. </p></li>
-                                    <li><p>Now, using the spotlight search open the QGIS software.</p></li>
-                                    <img src="assest/img/qgis_1/spotlight.png" class="tutorialimage">
-                                    <li><p>Once QGIS is open, click the <strong>Open</strong> under <strong>Project</strong>.</p></li>
-                                    <img src="assest/img/qgis_1/open.png" class="tutorialimage">
-                                    <li><p>This will open a new window. From here navigate to the extracted folder and select the file titled <strong>Natural_Earth_quick_start_for_QGIS.qgs</strong> and click open.</p></li>
-                                    <img src="assest/img/qgis_1/folder.png" class="tutorialimage">
-                                    <img src="assest/img/qgis_1/open_file.png" class="tutorialimage">
-                                    <li><p>Once the file is open it should look like the following: </p></li>
-                                    <img src="assest/img/qgis_1/map_open.png" class="tutorialimage">
-                                    <li><p>Use the zoom tool (located towards the top of the window) to zoom in on the North Carolna coast.</p></li>
-                                    <img src="assest/img/qgis_1/zoom.png" class="tutorialimage">
-                                    <img src="assest/img/qgis_1/nc_coast.png" class="tutorialimage">
-                                    <li><p>Next, we're going to uncheck a couple of layers. Unchecking a layer removes it from immediate view. This will make our map a bit more readable.</p></li>
-                                    <li><p>Layers are located in the lower left corner of the window and is label accordingly.</p></li>
-                                    <li><p>Uncheck the boxes labeled <strong>10m_geography_marine_polys</strong> and <strong>10m_admin_0_map_units</strong>.</p></li>
-                                    <img src="assest/img/qgis_1/unchecked.png" class="tutorialimage">
-                                    <li><p>In the next tutorial we will add some standard map elements.</p></li>
+                                    <li><p>
+                                    Open the image if it is not already displayed in a multispectral image window following the
+                                    guidelines given in exercise 1 (Display and Inspection of Image Data with MultiSpec).
+                                    <br><br>
+                                    One can control the enhancement of the image in the multispectral image window by setting five
+                                    different options in the Enhancement portion of the Display Specifications dialog box including
+                                    Bits of color, Stretch, Min-maxes, Treat ‘0’ as and Display levels per channel.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/open_dialog.png' class="tutorialimage">
+
+                                    <li><p>
+                                    2.1 The “Bits of color” default is 24 and the “Display levels per channel” default is 256 for all
+                                    monitors now days for the maximum number of colors possible. One can adjust to lower
+                                    values if one wishes to see what the affects are.
+                                    </p></li>
+                                    
+                                    <img src='assest/img/tutorial_8/double.png' class="tutorialimage">
+
+                                    <li><p>
+                                    The figure above illustrates 256 display levels per channel (millions of colors) on the left
+                                    and 2 display levels per channel (8 colors) on the right.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    2.2 The Treat ‘0’ as data setting causes 0 values to be displayed as black. However, if 0’s
+                                    actually represent background or ‘no data’, one may want to select the background option
+                                    to cause 0’s in all channels to be displayed as white. The figure below illustrates 0’s treated
+                                    as black on the left and 0’s as white on the right.
+                                    </p></li>
+                                    
+                                    <img src='assest/img/tutorial_8/double_2.png' class="tutorialimage">
+
+                                    <li><p>
+                                    2.3 The Stretch and Min-maxes are usually the options used to enhance different parts of the
+                                    image. They control the process by which each possible data value in the image data is
+                                    assigned to all possible display levels.
+                                    <br><br>
+                                    There are three choices for Stretch: Linear, Equal Area and Gaussian. In the case of Linear
+                                    Stretch, gray scale intervals are equally spaced over the data range, while the Equal Area
+                                    Stretch choice causes them to be set so that each interval represents about the same number
+                                    of pixels. Though nonlinear, the equal area stretch will provide maximum contrast. The
+                                    Gaussian selection causes the distribution of the number of pixels assigned to the gray scale
+                                    intervals to represent a Gaussian curve. If one holds the 'Option' key down (Mac version) or
+                                    the 'Right Mouse button down (Windows version) before you select the enhancement
+                                    popup menu with the left button, you can change the number of standard deviations that the
+                                    data will be fit to for the Gaussian selection. The default is 2.3.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/triple.png' class="tutorialimage">
+
+                                    <p>Linear, equal area and Gaussian stretches are illustrated in figure above left to right.</p>
+                                    <br><br>
+
+                                    <li><p>
+                                    2.4 The Min-maxes option allows one to select the beginning and end data values of the image
+                                    histogram to be used for assigning the pixels in the gray scale intervals defined by the
+                                    Stretch option. The “Entire Range” choice for this option would cause lowest data value
+                                    possible in the image, 0 for 8-bit unsigned data, to be the first data value displayed for
+                                    lowest display value (black) and 255 to be the last data value displayed for the highest
+                                    display value (white). However, if the actual range of the data is only 50 to 150, then the
+                                    data will only be represented by grays not black to white; there will not be much contrast in
+                                    the image.
+                                    <br><br>
+                                    The 2 Percent Tails Clipped choice will cause the selected begin and end range of data
+                                    values for a given channel to represent those data values in which 2 percent of them in the
+                                    histogram are outside of the selected range. The intent of this choice is to reduce the
+                                    chance that a small number of extreme outlier data values in the image will unduly
+                                    influence the display enhancement. This choice usually results in a display of the data that
+                                    has better contrast over all.
+                                    <br><br>
+                                    Selection of the Specify Min-Max... choice presents a dialog box (illustrated below) to
+                                    allow one to set percent of tails clipped to be something other than 2%. You can also set
+                                    your own min-max values to stretch the gray levels across. The actual data min and max
+                                    values computed from the histogram are included in the dialog box.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/user_specified.png' class="tutorialimage">
+                                    <br><br>
+                                    <p>Entire range, 2% clip and 4% clip is illustrated below from left to right.</p>
+                                    <br><br>
+                                    <img src='assest/img/tutorial_8/triple_2.png' class="tutorialimage">
                                 </ul>
-                                <p>Continue to <a href="tutorial_3.html">next tutorial</a>.</p>
+                                <p>Continue to <a href='tutorial_10.html'>next tutorial</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -198,20 +258,19 @@
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-sm-8 col-xs-12">
-                        <div class="single-footer footer-subscribe white xs-center">
-                            <div class="single-footer footer-subscribe white xs-center" id="communities">
-                                <h3 class="mb30 xs-font18">Elizabeth City State Unversity</h3>
-                                <p>Elizabeth City State University offers baccalaureate, professional, and master's degrees for a diverse student body. Our mission is to promote economic, social, and environmental progress for the people of northeastern North Carolina, the state, and the nation.</p>
-                                <div class="subscriber-form-area mt50 wow fadeIn">
-        
-                                    <!--img src="assest/img/icon/flicker-icon.png" id="icon"-->
-                                    <img src="assest/img/icon/instagramlogo2.png" id="icon">
-                                    <img src="assest/img/icon/linked-in-icon.png" id="icon">
-                                    <!--<img src="assest/img/icon/snapchat-icon2.png" id="icon">-->
-                                    <img src="assest/img/icon/twitter-icon.png" id="icon">
-                                    <img src="assest/img/icon/you-tube-icon.png" id="icon">
-                                </div>
+                        <div class="single-footer footer-subscribe white xs-center" id="communities">
+                            <h3 class="mb30 xs-font18">Elizabeth City State Unversity</h3>
+                            <p>Elizabeth City State University offers baccalaureate, professional, and master's degrees for a diverse student body. Our mission is to promote economic, social, and environmental progress for the people of northeastern North Carolina, the state, and the nation.</p>
+                            <div class="subscriber-form-area mt50 wow fadeIn">
+    
+                                <!--img src="assest/img/icon/flicker-icon.png" id="icon"-->
+                                <img src="assest/img/icon/instagramlogo2.png" id="icon">
+                                <img src="assest/img/icon/linked-in-icon.png" id="icon">
+                                <!--<img src="assest/img/icon/snapchat-icon2.png" id="icon">-->
+                                <img src="assest/img/icon/twitter-icon.png" id="icon">
+                                <img src="assest/img/icon/you-tube-icon.png" id="icon">
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
