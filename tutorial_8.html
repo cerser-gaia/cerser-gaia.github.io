@@ -18,7 +18,7 @@
     <title>Exploring MultiSpec</title>
 
     <!--====== FAVICON ICON =======-->
-    <link rel="shortcut icon" type="image/ico" href="assest/img/favicon.png" />
+    <link rel="shortcut icon" type="image/ico" href="assest/img/icon/ecsu_logo.png" />
 
     <!--====== STYLESHEETS ======-->
     <link href="assest/css/plugins.css" rel="stylesheet">
@@ -63,8 +63,8 @@
                         </div>
                         <div id="main-nav" class="stellarnav">
                             <ul id="nav" class="nav navbar-nav pull-right">
-                                <li class="active"><a href="#">Home</a>
-                                <li><a href="#courses">Courses</a>
+                                <li><a href="index.html">Home</a>
+                                <li class="active"><a href="#courses">Courses</a>
                                     <ul class= "sub-menu">
                                         <li><a href="tutorial_1.html">Introduction</a></li>
                                         <li><a href="tutorial_2.html">Opening and Viewing an Image</a></li>
@@ -83,16 +83,35 @@
                                         </li>
                                         <li><a>Exploring MultiSpec</a>
                                             <ul>
-                                                <li><a href="tutorial_6.html">Exploring MultiSpec: Part 1</a>
-                                                <li><a href="tutorial_7.html">Exploring MultiSpec: Part 2</a></li>
-                                                <li><a href="tutorial_8.html">Exploring MultiSpec: Part 3</a></li>
+                                                <li><a href="tutorial_5.html">Exploring MultiSpec: Part 1</a>
+                                                <li><a href="tutorial_6.html">Exploring MultiSpec: Part 2</a></li>
+                                                <li><a href="tutorial_7.html">Exploring MultiSpec: Part 3</a></li>
+                                                <li><a href="tutorial_8.html">Exploring MultiSpec: Display and Inspection of Image Data</a></li>
+                                                <li><a href="tutorial_9.html">Exploring MultiSpec: Image Enhancement</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#">Download MultiSpec©</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                                <li><a href="#faqs">Faqs</a></li>
+                                <li><a href="#labs">Labs</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#multispec">MultiSpec© Lessons</a>
+                                            <ul>
+                                                <li><a href="exercise_1.html">What is a satellite?</a></li>
+                                                <li><a href="exercise_2.html">What does digital mean?</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#multispec">QGIS Lessons</a>
+                                            <ul>
+                                                <li><a href="exercise_1.html">What is a satellite?</a></li>
+                                                <li><a href="exercise_2.html">What does digital mean?</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#" target="_blanks">Download MultiSpec©</a></li>
+                                <li><a href="https://qgis.org/en/site/index.html" target="_blanks">Download QGIS</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                                <li><a href="index.html#faqs">Faqs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -112,27 +131,153 @@
                             <h2 class="xs-font20"><strong>Exploring MultiSpec</strong> </h2>
                             <br><br>
                             <div class="tutorialtext">
-                                <h4>Exporting Image Data: Part 3</h4>
+                                <h4>Display and Inspection of Image Data</h4>
                                 <p>
-                                    In this tutorial we are going to cover some of the functionality of MultiSpec.
+                                    In this exercise, you will display an aircraft image of a portion of the Davis Purdue Agriculture Center in Randolf County, Indiana and view the data in several ways using MultiSpec.
+                                    <br><br>
+                                    Requirements: MultiSpec application and image titled “ag020522_DPAC_cd.lan”, which you can download <a href="https://delmar.instructure.com/courses/1271277/files/54209290/download?verifier=tYxyFreEZW81U8yxJ3zYKE2PpoCyTtn3fmJLkg1L&wrap=1">here</a>.
                                 </p>
                                 <br><br>
                                 <ul class="listcontent">
-                                    <li><p>Following the previous tutorial, we will be outputting cluster data of the same image. To download the image use <a href="INSERT LINK">this link</a>.</p></li>
-                                    <img src="Images/Exploring-MultiSpec/original_image.png" class="tutorialimage">
-                                    <li><p>Cluster data uses a clustering algorithm the either reads over the image once or multiple time. It then saves the results for display as a thematic map.</p></li>
-                                    <li><p>Begin by clicking <strong>Cluster...</strong> from the <strong>Processor</strong> tab.</p></li>
-                                    <img src="Images/Exploring-MultiSpec/cluster_menu.png" class="tutorialimage">
-                                    <li><p>This will open a new window.</p></li>
-                                    <img src="Images/Exploring-MultiSpec/cluster_box_1.png" class="tutorialimage">
-                                    <li><p>In the top left corner of the box you will see a radio buttion labeled <strong>Single Pass...</strong>. Select this option.</p></li>
-                                    <li><p>This will open a new window.</p></li>
-                                    <img src="Images/Exploring-MultiSpec/cluster_box_2.png" class="tutorialimage">
-                                    <li><p>Click the <strong>OK</strong> button. The output data should now appear in the already open text box.</p></li>
-                                    <img src="Images/Exploring-MultiSpec/cluster_results.png" class="tutorialimage">
-                                     <li><p>Observe the output data.</p></li>
+                                    <li><p>
+                                    1.1 Start MultiSpec using the icon on the desktop or from MultiSpec in the Startup Menu.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.2 From the File menu choose Open Image. . .. A dialog box will open to allow one to select
+                                    the data file one wishes to use.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.3 Select ag020522_DPAC_cd.lan in the Exercise1 folder and Open, or simply double-click
+                                    on ag020522_DPAC_cd.lan
+                                    <br><br>
+                                    This is a segment (709 lines x 1501 columns of pixels) of a 3-channel image of DPAC
+                                    collected on May 22, 2002. Next a dialog box will appear to allow one to choose among
+                                    various options for the image display.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/open_dialog.png' class="tutorialimage">
+
+                                    <li><p>
+                                    Note that by default, the area designated for display is the whole scene and the 3-Channel
+                                    Color Display Type is selected. The default settings call for the Red screen color to be
+                                    derived from band 3, Green from band 2 and Blue from band 1. These particular choices
+                                    will cause the screen image to be in a 3-color format approximating Color Infrared film.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    Select OK.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.4 This step may not occur for all situations. If the data histogram has not previously been
+                                    calculated and stored (in a .sta file), another dialog box will be presented allowing the
+                                    choice of regions to be histogrammed, so that the channel data values can be properly
+                                    assigned to screen colors. The default options built into this dialog box are satisfactory, so
+                                    Select OK to begin the histogramming.
+                                    <br><br>
+                                    After the histograms of all of the channels have been computed, the information will be
+                                    saved to a file named “ag020522_DPAC_cd.sta” so that they will not have to be recomputed
+                                    when needed again.
+                                    <br><br>
+                                    Note that if a .sta file already exists with the default name, a dialog box will be presented
+                                    allowing you to overwrite the existing .sta file or save to a different location.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.5 The image of the data will now appear. Notice that just above the image window in the
+                                    toolbar there are two small boxes with large and small “mountains”. These are image
+                                    zooming buttons allowing one to zoom in (large mountain) or out (small mountain) from
+                                    the current image scale. Just to the left of the image zooming buttons is another button
+                                    which shows X 1 in grayed form. This button allows one to go to X1 magnification
+                                    directly. The current zoom magnification is displayed along the bottom of the MultiSpec
+                                    application window in the box labeled “Zoom=”.
+                                    <br><br>
+                                    Some other options are to hold the ‘Ctrl’ key down while zooming to change the zoom step
+                                    factor to 0.1 instead of 1. In other words, the zoom factor will change from 1.0 to 1.1 to 1.2
+                                    etc. instead of 1, 2, 3, etc. (Note that one uses the ‘Option’ key on the Macintosh version to
+                                    do this.)
+                                    <br><br>
+                                    One can make a selection within the image by left click-hold in the image window, drag to
+                                    select a rectangle, and then releasing the left mouse button. If a selected area exists in the
+                                    image, any zooming will be centered on the selected area if possible. Clear selection using
+                                    the “Delete” key.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.6 Next one can view a side-by-side channel display for data quality inspection. From the
+                                    Processor menu, select Display Image… to bring up the display dialog box. Then select
+                                    Display Type “Side-by-Side Channels”, and select OK to display all three channels in the
+                                    image side by side.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/sidebyside.png' class="tutorialimage">
+                                    
+                                    <li><p>
+                                    The above image window will be displayed (after zooming out) which shows all three
+                                    channels displayed side-by-side. Note that the vegetation areas in channel 3 are brighter
+                                    than the same areas in channels 1 and 2.
+                                    <br><br>
+                                    The side-by-side channel display is a good way to verify that the channels are registered
+                                    correctly. In other words, the same location in the image is at the same pixel location in all
+                                    channels. To do this, select an area in one channel near a field intersection. This same
+                                    selected area will be drawn in all of the channels. One can then verify that the selected area
+                                    is at the same location in each channel.
+                                    <br><br>
+                                    Redisplay the 3-channel image with channels 3, 2 and 1 as Red, Green and Blue.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.7 Coordinate View. One can also display a “coordinate view” along the top of the image to
+                                    present the cursor (mouse) location and selected areas in the image. To do this, select the
+                                    View->Coordinate View menu item in the Windows version of MultiSpec [or select the
+                                    Window->Show Coordinate View menu item in the Macintosh version].
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/altered.png' class="tutorialimage">
+
+                                    <li><p>
+                                    If map coordinate information exists for the image, one can display the coordinates as map
+                                    units. Use the popup menu on the left side of the coordinate view to select the map units.
+                                    The area of the selection can be displayed as the number of pixels or in units of acres,
+                                    hectares, etc using the popup button to the left of “Scale”. The scale of the image will also
+                                    be displayed.
+                                    <br><br>
+                                    For this image, if one selects the Edit–>Image Map Parameters… menu item and set the
+                                    UTM Zone to 16 and the Datum to “WGS 84” and then select OK; one can also display the
+                                    cursor coordinates as latitude-longitude. Note that the format that this image file is stored
+                                    in (ERDAS *.lan) does not allow for storage of this information. Other image file formats
+                                    such as GeoTIFF do.
+                                    </p></li>
+                                    <br><br>
+                                    <li><p>
+                                    1.8 The 1-channel Thematic display type is useful to display "product" type images such as
+                                    MODIS NDVI or any of the other many MODIS products.
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/thematic_box.png' class="tutorialimage">
+
+                                    <li><p>
+                                    The data values are grouped into the desired number of levels and a legend is displayed to
+                                    the left of the image indicating which palette colors are associated with each range of data.
+                                    (See illustration below.) One can also enter a factor to multiply the data values displayed in
+                                    the legend by to reflect the actual measurement unit. Sometimes the data value may be the
+                                    measurement value times 100 or 1000. One can use the Min/Max User Specified dialog
+                                    box item to set the min and max values for the range of data to be displayed. Black is the
+                                    default color for data values less than the minimum and white is the default color for values
+                                    greater than the maximum. (Note: This feature can be considered as a supervised 1-channel
+                                    levels classifier.)
+                                    </p></li>
+
+                                    <img src='assest/img/tutorial_8/thematic_image.png' class="tutorialimage">
+
+                                    <li><p>
+                                    One can use the Reformat - Change Image File Format processor to create thematic images
+                                    based on what is displayed in the image window.
+                                    </p></li>
                                 </ul>
-                                <p>Continue to <a href='tutorial_8.html'>next tutorial</a>.</p>
+                                <p>Continue to <a href='tutorial_9.html'>next tutorial</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -151,6 +296,7 @@
                             <div class="footer-logo mb30">
                                 <a href="https://www.ecsu.edu"><img src="assest/img/ecsu_logo.png" alt=""></a>
                                 <p id="ecsu_desc">A constituent institution of the <br> University of North Carolina System</p>
+                                <!--img id="nc_promise" src="assest/img/nc_promise_logo_white1_450px.png" alt=""-->
                             </div>
                         </div>
                     </div>
@@ -167,19 +313,17 @@
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-sm-8 col-xs-12">
-                        <div class="single-footer footer-subscribe white xs-center">
+                        <div class="single-footer footer-subscribe white xs-center" id="communities">
                             <h3 class="mb30 xs-font18">Elizabeth City State Unversity</h3>
                             <p>Elizabeth City State University offers baccalaureate, professional, and master's degrees for a diverse student body. Our mission is to promote economic, social, and environmental progress for the people of northeastern North Carolina, the state, and the nation.</p>
                             <div class="subscriber-form-area mt50 wow fadeIn">
-                                <!--<form action="#" class="subscriber-form mb100">
-                                    <input type="email" name="email" id="email" placeholder="Email Address">
-                                    <button type="submit">Subscribe</button>
-                                </form>-->
-                                <form id="mc-form" class="subscriber-form">
-                                    <label class="mt10" for="mc-email"></label>
-                                    <input type="email" id="mc-email" placeholder="email@example.com">
-                                    <button type="submit" class="plus-btn"><i class="fa fa-paper-plane-o"></i></button>
-                                </form>
+    
+                                <!--img src="assest/img/icon/flicker-icon.png" id="icon"-->
+                                <img src="assest/img/icon/instagramlogo2.png" id="icon">
+                                <img src="assest/img/icon/linked-in-icon.png" id="icon">
+                                <!--<img src="assest/img/icon/snapchat-icon2.png" id="icon">-->
+                                <img src="assest/img/icon/twitter-icon.png" id="icon">
+                                <img src="assest/img/icon/you-tube-icon.png" id="icon">
                             </div>
                         </div>
                     </div>
