@@ -656,6 +656,10 @@ ul.sub-menu li:hover{
     border-style: solid;
     border-width: 2px;
   }
+
+  #contact_us {
+      margin: 80px;
+  }
   
   
   .dropdown-content a:hover {background-color: darkblue;}

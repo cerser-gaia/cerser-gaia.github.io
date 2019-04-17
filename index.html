@@ -18,7 +18,7 @@
     <title>Gaia Tutorial Webpage</title>
 
     <!--====== FAVICON ICON =======-->
-    <link rel="shortcut icon" type="image/ico" href="assest/img/favicon.png" />
+    <link rel="shortcut icon" type="image/ico" href="assest/img/icon/ecsu_logo.png" />
 
     <!--====== STYLESHEETS ======-->
     <link href="assest/css/plugins.css" rel="stylesheet">
@@ -213,7 +213,7 @@
     <!--ALL COURSE AREA-->
     <div class="dropdown">
         <div class=" text-center wow fadeIn">
-            <br><br><h2 class="xs-font26"><u>All Courses Menu</u></h2><br><br>
+            <br><br><h2 class="xs-font26"><u>All Courses Menu &#9660</u></h2><br><br>
         </div>
         <div class="dropdown-content">
             <div id="dropdown-container">
@@ -241,6 +241,12 @@
                 <hr>
             </div>
             <div id="dropdown-container">
+                <div> <h3 class="font22">Creating a map with QGIS: Part 1</h3> </div>
+                <div> <p class="font18">A tutorial showing the user how to create a map using QGIS.</p> </div>
+                <div style="margin-bottom:10px;"> <p class="mt30"><a href="qgis_tutorial_1.html" class="enroll-button">Go To Tutorial</a> </p> </div>
+                <hr>
+            </div> 
+            <div id="dropdown-container">
                 <div> <h3 class="font22">Exploring MultiSpec: Part 1</h3> </div>
                 <div> <p class="font18">Exporting Image Data</p> </div>
                 <div style="margin-bottom:10px;"> <p class="mt30"><a href="tutorial_6.html" class="enroll-button">Go To Tutorial</a> </p> </div>
@@ -257,7 +263,7 @@
                 <div> <p class="font18">Learn to output cluster image data.</p> </div>
                 <div style="margin-bottom:10px;"> <p class="mt30"><a href="tutorial_8.html" class="enroll-button">Go To Tutorial</a> </p> </div>
                 <hr>
-            </div>             
+            </div>
         </div>
     </div>
 
@@ -317,58 +323,48 @@
     <!--FAQS AREA END-->
 
     <!--CONTACT US AREA-->
-    <!--section class="contact-area sky-gray-bg" id="contact">
-        <div class="container-fluid no-padding">
-            <div class="row no-margin">
-                <div class="no-padding col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                    <div class="contact-form-content padding50 xs-padding20">
-                        <div class="contact-title wow fadeIn" id='#contact'>
-                            <h3 class="font28 mb50 xs-mb30 xs-font22 xs-mt20">Any question in mind? Don’t Worry Contact Us.</h3>
+        <div class="contact-title wow fadeIn" id='#contact' style="margin: 80px;">
+            <h3 class="font28 mb50 xs-mb30 xs-font22 xs-mt20">Any question in mind? Don’t Worry Contact Us.</h3>
+        </div>
+        <div class="contact-form wow fadeIn" id="contact_us">
+            <form action="https://script.google.com/macros/s/AKfycbzwG-wdd_dc6_fYmMEbyNUddEkH2FsLMhYioyDjZa1vas_uFikA/exec" id="gform" method="POST">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="form-group" id="name-field">
+                            <div class="form-input">
+                                <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Name.." required>
+                            </div>
                         </div>
-                        <div class="contact-form wow fadeIn">
-                            <form action="process.php" id="contact-form" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="name-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Name.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="email-field">
-                                            <div class="form-input">
-                                                <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Email.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="phone-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control" id="form-phone" name="form-phone" placeholder="Subject..">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="message-field">
-                                            <div class="form-input">
-                                                <textarea class="form-control" rows="6" id="form-message" name="form-message" placeholder="Your Message Here..." required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group mb0">
-                                            <button type="submit">Send Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="form-group" id="email-field">
+                            <div class="form-input">
+                                <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Email.." required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="form-group" id="phone-field">
+                            <div class="form-input">
+                                <input type="text" class="form-control" id="form-phone" name="form-phone" placeholder="Subject..">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="form-group" id="message-field">
+                            <div class="form-input">
+                                <textarea class="form-control" rows="6" id="form-message" name="form-message" placeholder="Your Message Here..." required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="form-group mb0">
+                            <input type="submit" onClick="this.disabled=true; this.value='Sent';" class="btn btn-primary btn-send-message" name="submit" value="Send Message">
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-    </section-->
     <!--CONTACT US AREA END-->
 
     <!--CLIENT AREA-->
@@ -431,7 +427,7 @@
                             <h3 class="mb30 xs-font18">Elizabeth City State Unversity</h3>
                             <p>Elizabeth City State University offers baccalaureate, professional, and master's degrees for a diverse student body. Our mission is to promote economic, social, and environmental progress for the people of northeastern North Carolina, the state, and the nation.</p>
                             <div class="subscriber-form-area mt50 wow fadeIn">
-                                <img src="assest/img/icon/facebook-icon.png" id="icon">
+    
                                 <!--img src="assest/img/icon/flicker-icon.png" id="icon"-->
                                 <img src="assest/img/icon/instagramlogo2.png" id="icon">
                                 <img src="assest/img/icon/linked-in-icon.png" id="icon">
@@ -487,6 +483,11 @@ Copyright &copy;<script>document.write(new  Date().getFullYear());</script> All 
     <!--===== MAPS JS=====-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTS_KEDfHXYBslFTI_qPJIybDP3eceE-A&sensor=false"></script>
     <script src="assest/js/maps.active.js"></script>
+
+    <!-- MAIN JS -->
+	<script src="js/main.js"></script>
+	<script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+
 </body>
 
 </html>
