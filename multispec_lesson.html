@@ -86,6 +86,8 @@
                                             <li><a href="tutorial_5.html">Exploring MultiSpec: Part 1</a>
                                             <li><a href="tutorial_6.html">Exploring MultiSpec: Part 2</a></li>
                                             <li><a href="tutorial_7.html">Exploring MultiSpec: Part 3</a></li>
+                                            <li><a href="tutorial_8.html">Exploring MultiSpec: Display and Inspection of Image Data</a></li>
+                                            <li><a href="tutorial_9.html">Exploring MultiSpec: Image Enhancement</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -94,23 +96,23 @@
                                 <ul class="sub-menu">
                                     <li><a href="multispec_lesson.html">MultiSpec© Lessons</a>
                                         <ul>
-                                            <li><a href="multispec_lesson.html#part1">What is a satellite?</a></li>
-                                            <li><a href="multispec_lesson.html#part2">What is a pixel?</a></li>
-                                            <li><a href="multispec_lesson.html#part3">What does digital mean?</a></li>
+                                            <li><a href="#part1">What is a satellite?</a></li>
+                                            <li><a href="#part2">What is a pixel?</a></li>
+                                            <li><a href="#part3">What does digital mean?</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="qgis_lesson.html">QGIS Lessons</a>
+                                    <!--li><a href="qgis_lesson.html">QGIS Lessons</a>
                                         <ul>
-                                            <li><a href="qgis_lesson.html#part1">Where satellite are place in the orbit?</a></li>
-                                            <li><a href="qgis_lesson.html#part2">What colors do satellite see?</a></li>
-                                            <li><a href="qgis_lesson.html#part3">What kind of equipment satellite carries?</a></li>
+                                            <li><a href="#part1">Where are satellite placed in the orbit?</a></li>
+                                            <li><a href="#part2">What colors do satellite see?</a></li>
+                                            <li><a href="#part3">What kind of equipment satellite carries?</a></li>
                                         </ul>
-                                    </li>
+                                    </li-->
                                 </ul>
                             </li>
                             <li><a href="https://engineering.purdue.edu/~biehl/MultiSpec/#" target="_blanks">Download MultiSpec©</a></li>
                             <li><a href="https://qgis.org/en/site/index.html" target="_blanks">Download QGIS</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#contact_us">Contact</a></li>
                             <li><a href="index.html#faqs">Faqs</a></li>
                             </ul>
                         </div>
@@ -133,29 +135,131 @@
                             <p style="margin-bottom:5%;">Give a breif description for each question. It can be more one answer. After answering the questions, hover over the question. There is more then one right answer.</p>
                             <br>
                             <div class="tutorialtext" id="part1">
-                                <p> 
-                                    <h2><strong><a href="https://www.nasa.gov/audience/forstudents/5-8/features/nasa-knows/what-is-a-satellite-58.html">What is a satellite?</a></strong></h2>
-                                    <br><br>
-                                    <img src="assest/img/satellite.png" height="100" width="100" style="align:center">
-                                    
+                                <h2><strong><a href="https://www.nasa.gov/audience/forstudents/5-8/features/nasa-knows/what-is-a-satellite-58.html">What is a satellite?</a></strong></h2>
+                                <br><br>
+                                <a href="assest/img/satellite.png" target="_blanks"><img src="assest/img/satellite.png" height="100" width="100" style="align:center" id="lab_image"></a>
+                                <br><br>
+                                <p>
+                                    <h4>Teacher Activities</h4>
+                                    The teacher should provide a large number of resources that students can<br>
+                                    what satellites actually look like. Some sources are:<br><br>
+                                    <ul>
+                                        <li>encyclopedia, both text and electronic (CD based)</li>
+                                        <li>film, video, and photos from Libraries and Regional NASA resource center</li>
+                                        <li>magazines (Life, Time, Smithsonian, National Geographic, Air & Space, Science<br>
+                                            etc.)</li>
+                                        <li>field trips to museums, especially the Smithsonian Air and Space Museum</li>
+                                    </ul><br><br>
+                                    <h4>Student Activities</h4>
+                                    Using resources available, students need be able to internalize the ideas of:<br><br>
+                                    <ol>
+                                        <li>What satellites look like</li>
+                                        <li>How big satellites are</li>
+                                        <li>What kinds of equipment satellites carry</li>
+                                    </ol><br>
+                                    Students can display their findings as:<br><br>
+                                    <ol>
+                                        <li>
+                                            Models of satellites, either to scale, or of satellites that they have designed to do<br>
+                                            special jobs, describing the equipment these would carry
+                                        </li>
+                                        <li>
+                                            Posters, charts and drawings of either real satellites, or satellites they have<br>
+                                            designed
+                                        </li>
+                                    </ol>
+                                </p>
+                                <br>
                             </div><br><br>
                             <div class="tutorialtext" id="part2">
-                                    <h2><strong id="part2"><a href="https://www.ultimate-photo-tips.com/what-is-a-pixel.html">What is a pixel?</a></strong></h2>
-                                    <br><br>
-                                    <img src="assest/img/pixel.png" height="100" width="100" style="align:center">
-                                    <br><br> 
-                                    
+                                <h2><strong id="part2"><a href="https://www.ultimate-photo-tips.com/what-is-a-pixel.html">What is a pixel?</a></strong></h2>
+                                <br><br>
+                                <a href="assest/img/pixel.png" target="_blanks"><img src="assest/img/pixel.png" height="100" width="100" style="align:center" id="lab_image"></a>
+                                <br><br> 
+                                <p>
+                                    <h4>Activity<br></h4>
                                     <br>
+                                    <strong>Materials: red, blue, green, white, and black objects</strong><br><br>
+                                    Select four students to come to the front of the room. Have them join hands to form a<br>
+                                    square. The square they have formed represents a pixel. Fill the student pixel with red<br>
+                                    objects. Have the students determine which of the primary colors are being absorbed or<br>
+                                    reflected. Repeat the process using blue objects, and then green. Form a second student<br>
+                                    pixel. Fill one of the pixels with black objects and the other one with white objects. Discuss<br>
+                                    the difference between the two pixels.<br><br>
+                                    
+                                    Now create three pixels reflecting each of the three primary colors. Instead of using objects<br>
+                                    to determine the pixel color, select three students with the same color clothing to stand<br>
+                                    inside each of the pixels. Assign number 1 to the pixel containing the red students, 2 to the<br>
+                                    green students and 3 to the blue students. Discuss how there are three different classes of<br>
+                                    pixels. Move one student from each of the pixels to a different pixel class, thereby changng<br>
+                                    the makeup of each of the pixels. Discuss how the satellite will see this pixel. Have new<br>
+                                    classes been formed? Using the nine students in different combinations, how many new<br>
+                                    classes are possible?<br><br>
                                 </p>
+                                <br>
                             </div><br><br>
                             <div class="tutorialtext" id="part3">
-                                    <h2><strong id="part3"><a href="https://www.mckinsey.com/industries/high-tech/our-insights/what-digital-really-means">What does digital mean?</a></strong></h2>
-                                    <br><br>
-                                    <img src="assest/img/digital.png" height="100" width="100" style="align:center">
-                                    <br><br> 
+                                <h2><strong id="part3"><a href="https://www.mckinsey.com/industries/high-tech/our-insights/what-digital-really-means">What does digital mean?</a></strong></h2>
+                                <br><br>
+                                <a href="assest/img/digital.png" target="_blanks"><img src="assest/img/digital.png" height="100" width="100" style="align:center" id="lab_image"></a>
+                                <br><br>
+                                <p>
+                                    <h4>Discussion<br></h4>
+                                    The three analog traces are plotted for 38 pixels. Tick marks on the horizontal axis correspond<br>
+                                    to the boundaries between pixels, and the ticks on the vertical axis mark digital counts 0, 32<br>
+                                    64, 96. 128, 160, 192, 224, and 256. A ruler and calculator are useful for converting the<br>
+                                    vertical distances to counts ranging from 0 to 255.<br><br>
+
+                                    Numbering the pixels from left to right, the first pixel has a low reflectance in band 1 and<br>
+                                    medium-high reflectance in bands 2 and 3. After digitizing these levels, the specral signature<br>
+                                    for this pixel is approximately:<br><br>
+
+                                    <table style="width:50%">
+                                        <tr align="center">
+                                            <td></td>
+                                            <td>Band 1</td>
+                                            <td>Band 2</td>
+                                            <td>Band 3</td>
+                                            <td>Band 4</td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Pixel 1:</td>
+                                            <td>11</td>
+                                            <td>159</td>
+                                            <td>139</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </table><br>
+
+                                    If we call this "Class 1," which other pixels would belong to Class 1? Ignore small-scale<br>
+                                    fluctuations in the signals, the first 6 pixels have the same signature and thus would be<br>
+                                    assigned to Class 1. The next 3 pixels (7-9) are a transition (boundary) group where band 3<br>
+                                    is decreasing. These might be classified into three unique classes (classes 2-4) since all<br>
+                                    three pixels have different band 3 values.<br><br>
+
+                                    The next 3 pixels (10-12) are similar and belong to a new class, Class 5. Compared to Class<br>
+                                    1, this class has the same reflectance in bands 1 and 2 but a much lower reflectance in band<br>
+                                    3. In fact, if we considered only bands 1 and 2, the first 12 pixels would all be assigned to<br>
+                                    the same class. Variation in band 3, however, shows that there are actually several distinct<br>
+                                    classes among these 12 pixels. There are at least 2 ground cover types, "Class 1" and "Class<br>
+                                    5." and three transition pixels which may actually never be associated with ground cover<br>
+                                    types. Instead, these probably constitute "edge" pixels lying at the boundary between distinct<br>
+                                    cover types.<br><br>
                                     
-                                    <br>
+                                    To illustrate this situation, suppose bands 1 and 2 are visible green and red bands, and<br>
+                                    suppose band 3 is a near or middle infrared band that is sensitive to plant stress (e.g., moisture<br>
+                                    content). Pixels 1-12 might all lie in a forested area which would appear as a uniform color<br>
+                                    to the human observer who sees only blue, green and red visible light. However, the remote<br>
+                                    sensor detects infrared radiation in band 3 which reveals that a portion of the forest is<br>
+                                    stressed.<br><br>
+
+                                    Students who tend to be overly precise may find this exercise frustrating. One could<br>
+                                    potentially divide the 38 pixels into 38 distinct classes if too much attention is given to<br>
+                                    Small-scale fluctuations. To simplify this activity for younger students, the teacher may<br>
+                                    Wish to redraw the analog traces to eliminate small fluctuations and also perhaps some of<br>
+                                    the transition pixels.<br>
                                 </p>
+                                <br>
                             </div><br><br>
                         </div>
                     </div>

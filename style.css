@@ -670,6 +670,10 @@ ul.sub-menu li:hover{
   #contact_us {
       margin: 80px;
   }
+
+  #lab_image:hover{
+      transform: scale(1.2)
+  }
   
   
   .dropdown-content a:hover {background-color: darkblue;}
