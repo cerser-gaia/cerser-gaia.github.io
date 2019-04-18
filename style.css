@@ -564,6 +564,16 @@ label.mt10.valid {
     margin: 30px;
 }
 
+h2#part1:hover {
+    color: blue;
+}
+h2#part2:hover {
+    color: blue;
+}
+h2#part3:hover {
+    color: blue;
+}
+
 .listcontent li{
     padding: 10;
     margin: 10;
